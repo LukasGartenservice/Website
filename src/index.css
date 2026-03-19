@@ -1,25 +1,65 @@
+@import url('https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&family=Nunito:wght@300..800&display=swap');
 @import "tailwindcss";
 
 @theme {
-  --color-primary-50: #f1f9f2;
-  --color-primary-100: #def3e1;
-  --color-primary-200: #c1e7c7;
-  --color-primary-300: #93d59e;
-  --color-primary-400: #5dbd6d;
-  --color-primary-500: #38a14a; /* core green */
-  --color-primary-600: #2a8139;
-  --color-primary-700: #23662f;
-  --color-primary-800: #205128;
-  --color-primary-900: #1b4323;
-  --color-primary-950: #0e2413;
+  --color-primary-50: #f2f7f4;
+  --color-primary-100: #e0efe5;
+  --color-primary-200: #c2dfce;
+  --color-primary-300: #9bc8b0;
+  --color-primary-400: #71ab8e;
+  --color-primary-500: #4f8d6e;
+  --color-primary-600: #3c7056;
+  --color-primary-700: #315a46;
+  --color-primary-800: #294839;
+  --color-primary-900: #223c30;
+  --color-primary-950: #12211a;
+  
+  --color-accent-400: #e88d51;
+  --color-accent-500: #d97743;
+  --color-accent-600: #c26131;
+
+  --font-sans: 'Nunito', ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  --font-serif: 'Lora', ui-serif, Georgia, Cambria, "Times New Roman", Times, serif;
 }
 
 @layer base {
   body {
-    @apply bg-slate-50 text-slate-800 antialiased;
+    @apply bg-[#FAFAF8] text-slate-800 antialiased font-sans;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-serif;
   }
   
   html {
     scroll-behavior: smooth;
   }
+}
+
+/* Custom organic shapes and animations */
+.organic-blob {
+  border-radius: 40% 60% 70% 30% / 40% 50% 60% 50%;
+  animation: morph 8s ease-in-out infinite both alternate;
+}
+
+@keyframes morph {
+  0%, 100% {
+    border-radius: 40% 60% 70% 30% / 40% 50% 60% 50%;
+  }
+  34% {
+    border-radius: 70% 30% 50% 50% / 30% 30% 70% 70%;
+  }
+  67% {
+    border-radius: 100% 60% 60% 100% / 100% 100% 60% 60%;
+  }
+}
+
+.float-slow {
+  animation: float 6s ease-in-out infinite;
+}
+
+@keyframes float {
+  0% { transform: translateY(0px) rotate(0deg); }
+  50% { transform: translateY(-15px) rotate(5deg); }
+  100% { transform: translateY(0px) rotate(0deg); }
 }
