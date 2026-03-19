@@ -1,85 +1,25 @@
-/* Global Styles for Gartenservice */
-:root {
-  /* Colors */
-  --primary-color: #2E7D32;
-  --primary-light: #4CAF50;
-  --primary-dark: #1B5E20;
+@import "tailwindcss";
+
+@theme {
+  --color-primary-50: #f1f9f2;
+  --color-primary-100: #def3e1;
+  --color-primary-200: #c1e7c7;
+  --color-primary-300: #93d59e;
+  --color-primary-400: #5dbd6d;
+  --color-primary-500: #38a14a; /* core green */
+  --color-primary-600: #2a8139;
+  --color-primary-700: #23662f;
+  --color-primary-800: #205128;
+  --color-primary-900: #1b4323;
+  --color-primary-950: #0e2413;
+}
+
+@layer base {
+  body {
+    @apply bg-slate-50 text-slate-800 antialiased;
+  }
   
-  --bg-color: #FFFFFF;
-  --bg-secondary: #F1F8E9;
-  --bg-tertiary: #F5F5F5;
-  
-  --text-main: #333333;
-  --text-muted: #666666;
-  --text-light: #FFFFFF;
-  
-  --border-color: #E0E0E0;
-
-  /* Typography */
-  --font-sans: 'Inter', system-ui, -apple-system, sans-serif;
-  --font-heading: 'Outfit', 'Inter', system-ui, sans-serif;
-
-  /* Spacing */
-  --spacing-xs: 0.5rem;
-  --spacing-sm: 1rem;
-  --spacing-md: 2rem;
-  --spacing-lg: 4rem;
-  --spacing-xl: 8rem;
-
-  /* Shadows */
-  --shadow-sm: 0 2px 4px rgba(0,0,0,0.05);
-  --shadow-md: 0 4px 6px rgba(0,0,0,0.1);
-  --shadow-lg: 0 10px 15px rgba(0,0,0,0.1);
-  
-  /* Radii */
-  --radius-sm: 4px;
-  --radius-md: 8px;
-  --radius-lg: 16px;
-  --radius-round: 50%;
-}
-
-* {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-}
-
-body {
-  font-family: var(--font-sans);
-  background-color: var(--bg-color);
-  color: var(--text-main);
-  line-height: 1.6;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-
-h1, h2, h3, h4, h5, h6 {
-  font-family: var(--font-heading);
-  font-weight: 600;
-  line-height: 1.2;
-  margin-bottom: var(--spacing-sm);
-  color: var(--text-main);
-}
-
-a {
-  color: var(--primary-color);
-  text-decoration: none;
-  transition: color 0.3s ease;
-}
-
-a:hover {
-  color: var(--primary-dark);
-}
-
-img {
-  max-width: 100%;
-  height: auto;
-  display: block;
-}
-
-.container {
-  width: 100%;
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 var(--spacing-sm);
+  html {
+    scroll-behavior: smooth;
+  }
 }
