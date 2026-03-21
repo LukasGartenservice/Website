@@ -1,7 +1,26 @@
-import { motion } from 'framer-motion';
+import { useState, useEffect } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
 import { ArrowRight, Leaf, Flower2, TreePine } from 'lucide-react';
 
+const carouselImages = [
+  '/client-images/1.2.jpg',
+  '/client-images/2.2.jpg',
+  '/client-images/3.2.jpg',
+  '/client-images/4.2.jpg',
+  '/client-images/5.2.jpg',
+  '/client-images/6.2.jpg'
+];
+
 const Hero = () => {
+  const [currentImage, setCurrentImage] = useState(0);
+
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setCurrentImage((prev) => (prev + 1) % carouselImages.length);
+    }, 4500); // Change image every 4.5 seconds
+    return () => clearInterval(timer);
+  }, []);
+
   return (
     <section className="relative min-h-[95vh] flex items-center pt-24 pb-12 overflow-hidden bg-[#fafafa]" id="home">
       {/* Enhanced Animated Background Decorations */}
@@ -85,7 +104,7 @@ const Hero = () => {
             </div>
           </motion.div>
 
-          {/* Right Side - Image */}
+          {/* Right Side - Image Carousel */}
           <motion.div
             initial={{ opacity: 0, scale: 0.9 }}
             animate={{ opacity: 1, scale: 1 }}
@@ -99,23 +118,26 @@ const Hero = () => {
               transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
             />
             
-            {/* Organic Image Wrapper - Expands on hover to reveal Full Vorher/Nachher Image it */}
-            <div className="relative w-full max-w-[500px] lg:max-w-[700px] aspect-[4/5] hover:aspect-[4/3] organic-blob hover:![border-radius:2rem] hover:![animation:none] transition-all duration-700 overflow-hidden border-[12px] border-white z-10 shadow-[0_30px_60px_-15px_rgba(44,82,60,0.3)] group cursor-pointer lg:hover:w-[130%] lg:hover:-ml-[30%]">
-              <img 
-                src="/client-images/650388932_2134230414009669_5610246287092796361_n.jpg" 
-                alt="Gartenpflege Vorher Nachher" 
-                className="w-full h-full object-cover transition-transform duration-[2s] ease-out group-hover:scale-105"
-              />
-              <div className="absolute inset-0 border-4 border-primary-100/30 organic-blob group-hover:opacity-0 pointer-events-none transition-opacity duration-300 z-20"></div>
-              
-              <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-center justify-center z-10 backdrop-blur-[2px]">
-                <span className="text-white font-bold text-lg bg-primary-600/95 px-8 py-3 rounded-full transform translate-y-4 group-hover:translate-y-0 transition-transform duration-500 shadow-xl shadow-primary-900/40">Vorher / Nachher betrachten</span>
-              </div>
+            {/* Organic Image Wrapper - Fading Carousel */}
+            <div className="relative w-full max-w-[500px] lg:max-w-[650px] aspect-[4/5] organic-blob overflow-hidden border-[12px] border-white z-10 shadow-[0_30px_60px_-15px_rgba(44,82,60,0.3)]">
+              <AnimatePresence>
+                <motion.img 
+                  key={currentImage}
+                  initial={{ opacity: 0, scale: 1.05 }}
+                  animate={{ opacity: 1, scale: 1 }}
+                  exit={{ opacity: 0 }}
+                  transition={{ duration: 1.2, ease: "easeInOut" }}
+                  src={carouselImages[currentImage]} 
+                  alt="Gartenpflege Projekt" 
+                  className="absolute inset-0 w-full h-full object-cover"
+                />
+              </AnimatePresence>
+              <div className="absolute inset-0 border-4 border-primary-100/30 organic-blob pointer-events-none z-20"></div>
             </div>
             
             {/* Floating Badge */}
             <motion.div 
-              className="absolute bottom-4 -left-4 lg:-left-12 bg-white/95 backdrop-blur-sm p-5 lg:p-7 rounded-[2rem] shadow-2xl flex items-center gap-4 lg:gap-5 z-30 border border-slate-100 transition-all duration-500 hover:-translate-y-2 lg:group-hover:-left-20"
+              className="absolute bottom-4 -left-4 lg:-left-12 bg-white/95 backdrop-blur-sm p-5 lg:p-7 rounded-[2rem] shadow-2xl flex items-center gap-4 lg:gap-5 z-30 border border-slate-100"
               animate={{ y: [0, -12, 0] }}
               transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
             >

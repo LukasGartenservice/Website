@@ -4,27 +4,39 @@ import { ArrowLeftRight } from 'lucide-react';
 const pairs = [
   { 
     id: 1, 
-    before: { src: '/client-images/650031271_1497172871941996_2307952344344341509_n.jpg', alt: 'Vorher' },
-    after: { src: '/client-images/650038274_1414747203271045_644927671185212080_n.jpg', alt: 'Nachher' },
+    before: { src: '/client-images/1.jpg', alt: 'Vorher' },
+    after: { src: '/client-images/1.2.jpg', alt: 'Nachher' },
     title: 'Gartengestaltung & Bepflanzung'
   },
   { 
     id: 2, 
-    before: { src: '/client-images/650071771_1990929878465182_5460502490233427381_n.jpg', alt: 'Vorher' },
-    after: { src: '/client-images/650096878_1490830372640003_7416546595815686007_n.jpg', alt: 'Nachher' },
+    before: { src: '/client-images/2.jpg', alt: 'Vorher' },
+    after: { src: '/client-images/2.2.jpg', alt: 'Nachher' },
     title: 'Rasenpflege & Anlage'
   },
   { 
     id: 3, 
-    before: { src: '/client-images/650110743_952199580712351_4198352248627913451_n.jpg', alt: 'Vorher' },
-    after: { src: '/client-images/650127931_1776912903268179_6527464054629227245_n.jpg', alt: 'Nachher' },
+    before: { src: '/client-images/3.jpg', alt: 'Vorher' },
+    after: { src: '/client-images/3.2.jpg', alt: 'Nachher' },
     title: 'Hecken- & Strauchschnitt'
   },
   { 
     id: 4, 
-    before: { src: '/client-images/651167466_804826098768747_2232222347755592427_n.jpg', alt: 'Vorher' },
-    after: { src: '/client-images/652692125_1849364152439752_7762044846891967579_n.jpg', alt: 'Nachher' },
+    before: { src: '/client-images/4.jpg', alt: 'Vorher' },
+    after: { src: '/client-images/4.2.jpg', alt: 'Nachher' },
     title: 'Wegebau & Pflasterarbeiten'
+  },
+  { 
+    id: 5, 
+    before: { src: '/client-images/5.jpg', alt: 'Vorher' },
+    after: { src: '/client-images/5.2.jpg', alt: 'Nachher' },
+    title: 'Baumpflege & Fällarbeiten'
+  },
+  { 
+    id: 6, 
+    before: { src: '/client-images/6.jpg', alt: 'Vorher' },
+    after: { src: '/client-images/6.2.jpg', alt: 'Nachher' },
+    title: 'Komplette Gartenpflege'
   }
 ];
 
