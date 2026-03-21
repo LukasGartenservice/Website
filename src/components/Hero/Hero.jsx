@@ -100,9 +100,9 @@ const Hero = () => {
             />
             
             {/* Organic Image Wrapper - Make it larger explicitly */}
-            <div className="relative w-full max-w-[500px] lg:max-w-[650px] aspect-square organic-blob overflow-hidden border-[12px] border-white z-10 shadow-[0_30px_60px_-15px_rgba(44,82,60,0.3)]">
+            <div className="relative w-full max-w-[500px] lg:max-w-[650px] aspect-[4/5] organic-blob overflow-hidden border-[12px] border-white z-10 shadow-[0_30px_60px_-15px_rgba(44,82,60,0.3)]">
               <img 
-                src="https://images.unsplash.com/photo-1558904541-efa843a96f0f?q=80&w=1200&auto=format&fit=crop" 
+                src="/client-images/650135903_905693992455460_6283807173591726724_n.jpg" 
                 alt="Gartenpflege im Fokus" 
                 className="w-full h-full object-cover transition-transform duration-[1.5s] ease-out hover:scale-110"
               />

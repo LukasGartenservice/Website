@@ -101,7 +101,7 @@ const Contact = () => {
                     <input 
                       type="text" 
                       id="name" 
-                      className="w-full px-4 py-4 bg-slate-50 border-2 border-slate-100 rounded-xl focus:ring-0 focus:border-primary-500 focus:bg-white transition-all text-slate-800 placeholder-slate-300 font-sans shadow-inner outline-none" 
+                      className="w-full px-4 py-4 bg-slate-50 border-2 border-slate-100 rounded-xl focus:ring-0 focus:border-primary-500 focus:bg-white transition-all text-slate-800 placeholder-slate-400 font-sans shadow-inner outline-none text-base" 
                       placeholder="z.B. Max Mustermann"
                       required 
                     />
@@ -112,7 +112,7 @@ const Contact = () => {
                     <input 
                       type="email" 
                       id="email" 
-                      className="w-full px-4 py-4 bg-slate-50 border-2 border-slate-100 rounded-xl focus:ring-0 focus:border-primary-500 focus:bg-white transition-all text-slate-800 placeholder-slate-300 font-sans shadow-inner outline-none" 
+                      className="w-full px-4 py-4 bg-slate-50 border-2 border-slate-100 rounded-xl focus:ring-0 focus:border-primary-500 focus:bg-white transition-all text-slate-800 placeholder-slate-400 font-sans shadow-inner outline-none text-base" 
                       placeholder="z.B. max@beispiel.de"
                       required 
                     />
@@ -124,7 +124,7 @@ const Contact = () => {
                   <div className="relative">
                     <select 
                       id="service" 
-                      className="w-full px-4 py-4 bg-slate-50 border-2 border-slate-100 rounded-xl focus:ring-0 focus:border-primary-500 focus:bg-white transition-all text-slate-800 appearance-none font-serif text-xl outline-none shadow-inner cursor-pointer"
+                      className="w-full px-4 py-4 bg-slate-50 border-2 border-slate-100 rounded-xl focus:ring-0 focus:border-primary-500 focus:bg-white transition-all text-slate-800 appearance-none font-sans text-base outline-none shadow-inner cursor-pointer"
                     >
                       <option value="">Bitte Leistungsbereich wählen...</option>
                       <option value="rasenpflege">Rasenpflege & Mäharbeiten</option>
@@ -144,7 +144,7 @@ const Contact = () => {
                   <textarea 
                     id="message" 
                     rows="4" 
-                    className="w-full px-4 py-4 bg-slate-50 border-2 border-slate-100 rounded-xl focus:ring-0 focus:border-primary-500 focus:bg-white transition-all text-slate-800 placeholder-slate-300 resize-none font-sans shadow-inner outline-none" 
+                    className="w-full px-4 py-4 bg-slate-50 border-2 border-slate-100 rounded-xl focus:ring-0 focus:border-primary-500 focus:bg-white transition-all text-slate-800 placeholder-slate-400 resize-none font-sans shadow-inner outline-none text-base" 
                     placeholder="Beschreiben Sie kurz Ihr Vorhaben, die Fläche oder besondere Wünsche..."
                     required
                   ></textarea>
