@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion';
-import { Shovel, Scissors, TreeDeciduous, Flower2, ArrowRight } from 'lucide-react';
+import { Shovel, Scissors, TreeDeciduous, Droplets, ArrowRight } from 'lucide-react';
 
 const servicesData = [
   {
@@ -31,12 +31,12 @@ const servicesData = [
   },
   {
     id: 4,
-    title: 'Pflanzungen',
-    description: 'Farbharmonische Beete und standortgerechte Pflanzenwahl – für ganzjährige Blütenpracht im Garten.',
-    icon: Flower2,
-    color: 'text-rose-500',
-    blobColor: 'bg-rose-100',
-    shadowColor: 'group-hover:shadow-rose-500/20'
+    title: 'Hochdruckreinigung',
+    description: 'Gründliche und schonende Reinigung von Terrassen, Wegen und Einfahrten. Befreien Sie Flächen von Moos & Schmutz.',
+    icon: Droplets,
+    color: 'text-cyan-600',
+    blobColor: 'bg-cyan-100',
+    shadowColor: 'group-hover:shadow-cyan-500/20'
   }
 ];
 

@@ -4,7 +4,6 @@ import { ArrowRight, Leaf, Flower2, TreePine } from 'lucide-react';
 
 const carouselImages = [
   '/client-images/1.2.jpg',
-  '/client-images/2.2.jpg',
   '/client-images/3.2.jpg',
   '/client-images/4.2.jpg',
   '/client-images/5.2.jpg',

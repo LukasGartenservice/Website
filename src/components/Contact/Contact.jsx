@@ -130,8 +130,8 @@ const Contact = () => {
                       <option value="rasenpflege">Rasenpflege & Mäharbeiten</option>
                       <option value="heckenschnitt">Hecken- & Strauchschnitt</option>
                       <option value="baumpflege">Baumpflege & Fällungen</option>
-                      <option value="pflasterarbeiten">Pflasterarbeiten & Wegebau</option>
-                      <option value="komplett">Komplette Gartenpflege</option>
+                      <option value="hochdruckreinigung">Terrassen- & Hochdruckreinigung</option>
+                      <option value="komplett">Alles rund um den Garten</option>
                     </select>
                     <div className="absolute inset-y-0 right-4 flex items-center pointer-events-none">
                       <svg className="w-5 h-5 text-slate-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7"></path></svg>
