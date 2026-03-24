@@ -42,16 +42,16 @@ const pairs = [
 
 const Gallery = () => {
   return (
-    <section className="py-24 bg-slate-50 relative overflow-hidden" id="gallery">
+    <section className="py-16 md:py-24 bg-slate-50 relative overflow-hidden" id="gallery">
       {/* Decorative patterns */}
       <div className="absolute top-0 right-0 w-full h-full bg-[radial-gradient(circle_at_top_right,rgba(40,70,50,0.03)_0%,transparent_50%)] pointer-events-none z-0"></div>
 
       <div className="container mx-auto px-4 md:px-6 relative z-10">
-        <div className="text-center max-w-2xl mx-auto mb-16 lg:mb-24">
-          <div className="inline-block bg-white text-primary-800 px-4 py-1.5 rounded-full text-sm font-bold tracking-wider uppercase mb-6 shadow-sm border border-primary-100">
+        <div className="text-center max-w-2xl mx-auto mb-12 lg:mb-24">
+          <div className="inline-block bg-white text-primary-800 px-4 py-1.5 rounded-full text-sm font-bold tracking-wider uppercase mb-4 md:mb-6 shadow-sm border border-primary-100">
             Unsere Arbeit
           </div>
-          <h2 className="text-4xl md:text-5xl font-serif text-slate-800 mb-6 leading-tight">
+          <h2 className="text-[2rem] leading-[1.2] md:text-5xl font-serif text-slate-800 mb-4 md:mb-6 md:leading-tight">
             Echte <span className="text-primary-600 italic font-light drop-shadow-sm">Ergebnisse</span> aus unseren Projekten.
           </h2>
           <p className="text-lg text-slate-600 font-sans">
@@ -59,27 +59,27 @@ const Gallery = () => {
           </p>
         </div>
 
-        <div className="flex flex-col gap-16 lg:gap-24">
+        <div className="flex flex-col gap-10 lg:gap-24">
           {pairs.map((pair, index) => (
             <motion.div
               key={pair.id}
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: "-100px" }}
+              viewport={{ once: true, margin: "-50px" }}
               transition={{ duration: 0.7 }}
-              className="bg-white p-6 md:p-8 lg:p-10 rounded-[2.5rem] shadow-[0_20px_40px_-15px_rgba(40,70,50,0.08)] border border-slate-100 relative"
+              className="bg-white p-5 md:p-8 lg:p-10 rounded-[2rem] md:rounded-[2.5rem] shadow-xl md:shadow-[0_20px_40px_-15px_rgba(40,70,50,0.08)] border border-slate-100 relative"
             >
               {/* Project Title */}
-              <div className="text-center mb-8">
-                <h3 className="text-2xl font-serif text-slate-800">{pair.title}</h3>
+              <div className="text-center mb-6 md:mb-8">
+                <h3 className="text-xl md:text-2xl font-serif text-slate-800">{pair.title}</h3>
                 <div className="w-12 h-1 bg-primary-200 mx-auto mt-4 rounded-full"></div>
               </div>
 
               <div className="grid grid-cols-2 gap-4 md:gap-8 relative">
                 
                 {/* Center Icon */}
-                <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 bg-white w-12 h-12 md:w-16 md:h-16 rounded-full flex items-center justify-center shadow-xl z-20 text-primary-500 border border-slate-100">
-                  <ArrowLeftRight className="w-5 h-5 md:w-7 md:h-7 opacity-70" />
+                <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 bg-white w-10 h-10 md:w-16 md:h-16 rounded-full flex items-center justify-center shadow-lg md:shadow-xl z-20 text-primary-500 border border-slate-100">
+                  <ArrowLeftRight className="w-4 h-4 md:w-7 md:h-7 opacity-70" />
                 </div>
 
                 {/* Vorher / Before */}

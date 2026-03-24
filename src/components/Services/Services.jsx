@@ -42,12 +42,12 @@ const servicesData = [
 
 const Services = () => {
   return (
-    <section className="py-28 lg:py-36 relative overflow-hidden bg-slate-50" id="services">
+    <section className="py-16 lg:py-36 relative overflow-hidden bg-slate-50" id="services">
       {/* Premium Background Elements */}
       <div className="absolute inset-0 z-0 opacity-40">
-        <div className="absolute top-0 right-0 w-[800px] h-[800px] bg-primary-200 rounded-full mix-blend-multiply filter blur-[100px] opacity-40 animate-pulse-slow"></div>
-        <div className="absolute bottom-0 left-0 w-[600px] h-[600px] bg-accent-100 rounded-full mix-blend-multiply filter blur-[100px] opacity-50 animation-delay-2000"></div>
-        <div className="absolute top-1/2 left-1/3 w-[500px] h-[500px] bg-emerald-100/50 rounded-full mix-blend-multiply filter blur-[120px] opacity-40 animation-delay-4000"></div>
+        <div className="hidden md:block absolute top-0 right-0 w-[800px] h-[800px] bg-primary-200 rounded-full mix-blend-multiply filter blur-[100px] opacity-40 animate-pulse-slow"></div>
+        <div className="hidden md:block absolute bottom-0 left-0 w-[600px] h-[600px] bg-accent-100 rounded-full mix-blend-multiply filter blur-[100px] opacity-50 animation-delay-2000"></div>
+        <div className="hidden lg:block absolute top-1/2 left-1/3 w-[500px] h-[500px] bg-emerald-100/50 rounded-full mix-blend-multiply filter blur-[120px] opacity-40 animation-delay-4000"></div>
       </div>
       
       <PremiumPatternBackground />
@@ -63,7 +63,7 @@ const Services = () => {
             <div className="inline-block bg-white/80 backdrop-blur-md px-4 py-1.5 rounded-full text-sm font-bold text-primary-600 tracking-wider uppercase mb-6 shadow-sm border border-primary-100">
               Unser Angebot
             </div>
-            <h2 className="text-4xl md:text-5xl lg:text-6xl xl:text-[64px] font-serif text-slate-800 mb-6 leading-[1.1]">
+            <h2 className="text-[2rem] leading-[1.2] md:text-5xl lg:text-6xl xl:text-[64px] font-serif text-slate-800 mb-6 md:leading-[1.1]">
               Alles, was Ihr Garten <br/><span className="text-primary-600 relative inline-block">
                 braucht.
                 <svg className="absolute -bottom-2 left-0 w-full h-3 text-accent-300 opacity-70" viewBox="0 0 100 20" preserveAspectRatio="none"><path d="M0,10 Q50,20 100,10" stroke="currentColor" strokeWidth="4" fill="none"/></svg>
@@ -85,7 +85,7 @@ const Services = () => {
           </motion.div>
         </div>
         
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8">
+        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-5 lg:gap-8">
           {servicesData.map((service, index) => {
             const Icon = service.icon;
             return (
@@ -97,17 +97,17 @@ const Services = () => {
                 transition={{ duration: 0.7, delay: index * 0.15, ease: "easeOut" }}
                 className="group cursor-pointer h-full"
               >
-                <div className={`bg-white/80 backdrop-blur-lg rounded-[2.5rem] p-8 h-full transition-all duration-500 group-hover:-translate-y-4 hover:bg-white shadow-[0_8px_30px_rgb(0,0,0,0.04)] ${service.shadowColor} group-hover:shadow-[0_20px_40px_rgb(0,0,0,0.08)] border border-white/60 relative overflow-hidden flex flex-col`}>
+                <div className={`bg-white/80 backdrop-blur-lg rounded-[2rem] md:rounded-[2.5rem] p-6 lg:p-8 h-full transition-all duration-500 group-hover:-translate-y-4 hover:bg-white shadow-sm md:shadow-[0_8px_30px_rgb(0,0,0,0.04)] ${service.shadowColor} group-hover:shadow-xl border border-white/60 md:border-white/80 relative overflow-hidden flex flex-col`}>
                   
                   {/* Decorative corner shape */}
                   <div className="absolute -top-12 -right-12 w-32 h-32 bg-gradient-to-br from-white to-slate-50 rounded-full opacity-50 group-hover:scale-150 transition-transform duration-700 pointer-events-none"></div>
 
-                  <div className={`w-20 h-20 ${service.blobColor} ${service.color} organic-blob flex items-center justify-center mb-8 transition-transform duration-500 group-hover:scale-110 group-hover:-rotate-6 shadow-sm relative z-10`}>
-                    <Icon className="w-8 h-8" strokeWidth={1.75} />
+                  <div className={`w-16 h-16 lg:w-20 lg:h-20 ${service.blobColor} ${service.color} organic-blob flex items-center justify-center mb-6 lg:mb-8 transition-transform duration-500 group-hover:scale-110 group-hover:-rotate-6 shadow-sm relative z-10`}>
+                    <Icon className="w-7 h-7 lg:w-8 lg:h-8" strokeWidth={1.75} />
                   </div>
                   
-                  <h3 className="text-2xl font-serif font-extrabold text-slate-800 mb-4 relative z-10">{service.title}</h3>
-                  <p className="text-slate-600 mb-10 leading-relaxed font-sans relative z-10">
+                  <h3 className="text-xl lg:text-2xl font-serif font-extrabold text-slate-800 mb-3 lg:mb-4 relative z-10">{service.title}</h3>
+                  <p className="text-sm lg:text-base text-slate-600 mb-8 lg:mb-10 leading-relaxed font-sans relative z-10">
                     {service.description}
                   </p>
                   
