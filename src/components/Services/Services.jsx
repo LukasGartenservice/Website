@@ -85,29 +85,29 @@ const Services = () => {
           </motion.div>
         </div>
         
-        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-5 lg:gap-8">
+        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-5 lg:gap-8">
           {servicesData.map((service, index) => {
             const Icon = service.icon;
             return (
               <motion.div 
                 key={service.id} 
-                initial={{ opacity: 0, y: 50 }}
+                initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, margin: "-50px" }}
-                transition={{ duration: 0.7, delay: index * 0.15, ease: "easeOut" }}
+                viewport={{ once: true, margin: "-20px" }}
+                transition={{ duration: 0.5, delay: index * 0.1, ease: "easeOut" }}
                 className="group cursor-pointer h-full"
               >
-                <div className={`bg-white/80 backdrop-blur-lg rounded-[2rem] md:rounded-[2.5rem] p-6 lg:p-8 h-full transition-all duration-500 group-hover:-translate-y-4 hover:bg-white shadow-sm md:shadow-[0_8px_30px_rgb(0,0,0,0.04)] ${service.shadowColor} group-hover:shadow-xl border border-white/60 md:border-white/80 relative overflow-hidden flex flex-col`}>
+                <div className={`bg-white rounded-2xl md:rounded-[2.5rem] p-5 md:p-6 lg:p-8 h-full transition-all duration-300 md:duration-500 group-hover:-translate-y-2 hover:bg-white shadow-sm md:shadow-[0_8px_30px_rgb(0,0,0,0.04)] ${service.shadowColor} group-hover:shadow-md border border-slate-100 md:border-white/80 relative overflow-hidden flex flex-col`}>
                   
                   {/* Decorative corner shape */}
-                  <div className="absolute -top-12 -right-12 w-32 h-32 bg-gradient-to-br from-white to-slate-50 rounded-full opacity-50 group-hover:scale-150 transition-transform duration-700 pointer-events-none"></div>
+                  <div className="hidden md:block absolute -top-12 -right-12 w-32 h-32 bg-gradient-to-br from-white to-slate-50 rounded-full opacity-50 group-hover:scale-150 transition-transform duration-700 pointer-events-none"></div>
 
-                  <div className={`w-16 h-16 lg:w-20 lg:h-20 ${service.blobColor} ${service.color} organic-blob flex items-center justify-center mb-6 lg:mb-8 transition-transform duration-500 group-hover:scale-110 group-hover:-rotate-6 shadow-sm relative z-10`}>
-                    <Icon className="w-7 h-7 lg:w-8 lg:h-8" strokeWidth={1.75} />
+                  <div className={`w-12 h-12 md:w-16 md:h-16 lg:w-20 lg:h-20 ${service.blobColor} ${service.color} rounded-xl md:organic-blob flex items-center justify-center mb-4 md:mb-6 lg:mb-8 transition-transform duration-300 group-hover:scale-105 shadow-sm relative z-10`}>
+                    <Icon className="w-5 h-5 md:w-7 md:h-7 lg:w-8 lg:h-8" strokeWidth={2} />
                   </div>
                   
-                  <h3 className="text-xl lg:text-2xl font-serif font-extrabold text-slate-800 mb-3 lg:mb-4 relative z-10">{service.title}</h3>
-                  <p className="text-sm lg:text-base text-slate-600 mb-8 lg:mb-10 leading-relaxed font-sans relative z-10">
+                  <h3 className="text-lg md:text-xl lg:text-2xl font-serif font-bold text-slate-800 mb-2 md:mb-3 lg:mb-4 relative z-10">{service.title}</h3>
+                  <p className="text-sm lg:text-base text-slate-500 mb-6 lg:mb-10 leading-relaxed font-sans relative z-10">
                     {service.description}
                   </p>
                   

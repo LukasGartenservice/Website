@@ -70,44 +70,43 @@ const Gallery = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-50px" }}
               transition={{ duration: 0.7 }}
-              className="bg-white p-5 md:p-8 lg:p-10 rounded-[2rem] md:rounded-[2.5rem] shadow-xl md:shadow-[0_20px_40px_-15px_rgba(40,70,50,0.08)] border border-slate-100 relative"
+              className="bg-white p-4 md:p-8 lg:p-10 rounded-2xl md:rounded-[2.5rem] shadow-sm md:shadow-[0_20px_40px_-15px_rgba(40,70,50,0.08)] border border-slate-200 relative"
             >
               {/* Project Title */}
-              <div className="text-center mb-6 md:mb-8">
-                <h3 className="text-xl md:text-2xl font-serif text-slate-800">{pair.title}</h3>
-                <div className="w-12 h-1 bg-primary-200 mx-auto mt-4 rounded-full"></div>
+              <div className="mb-4 md:mb-8 pl-1 md:text-center md:pl-0">
+                <h3 className="text-lg font-bold md:text-2xl font-serif text-slate-800">{pair.title}</h3>
+                <div className="w-8 h-1 md:w-12 md:bg-primary-200 md:mx-auto mt-2 md:mt-4 rounded-full bg-primary-300"></div>
               </div>
 
               <div className="grid grid-cols-2 gap-4 md:gap-8 relative">
                 
                 {/* Center Icon */}
-                <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 bg-white w-10 h-10 md:w-16 md:h-16 rounded-full flex items-center justify-center shadow-lg md:shadow-xl z-20 text-primary-500 border border-slate-100">
+                <div className="hidden md:flex absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 bg-white w-10 h-10 md:w-16 md:h-16 rounded-full items-center justify-center shadow-lg md:shadow-xl z-20 text-primary-500 border border-slate-100">
                   <ArrowLeftRight className="w-4 h-4 md:w-7 md:h-7 opacity-70" />
                 </div>
 
-                {/* Vorher / Before */}
-                <div className="relative group rounded-2xl md:rounded-[2rem] overflow-hidden aspect-[4/5] md:aspect-video lg:aspect-[16/10] bg-slate-100 shadow-inner">
+                <div className="relative group rounded-xl md:rounded-[2rem] overflow-hidden aspect-[4/5] md:aspect-video lg:aspect-[16/10] bg-slate-100 shadow-inner">
                   <img
                     src={pair.before.src}
                     alt={pair.before.alt}
                     className="w-full h-full object-cover transition-transform duration-[2s] group-hover:scale-105 filter grayscale-[20%] sepia-[10%] group-hover:grayscale-0 group-hover:sepia-0"
                   />
-                  <div className="absolute top-4 left-4 md:top-6 md:left-6 bg-slate-800/80 backdrop-blur-md text-white px-3 md:px-4 py-1.5 md:py-2 text-[10px] md:text-xs font-extrabold tracking-widest uppercase rounded-full border border-white/20 shadow-lg">
+                  <div className="absolute top-2 left-2 md:top-6 md:left-6 bg-slate-800/80 backdrop-blur-md text-white px-2 md:px-4 py-1 md:py-2 text-[9px] md:text-xs font-extrabold tracking-widest uppercase rounded-full shadow-sm">
                     Davor
                   </div>
                 </div>
 
                 {/* Nachher / After */}
-                <div className="relative group rounded-2xl md:rounded-[2rem] overflow-hidden aspect-[4/5] md:aspect-video lg:aspect-[16/10] bg-slate-100 shadow-inner">
+                <div className="relative group rounded-xl md:rounded-[2rem] overflow-hidden aspect-[4/5] md:aspect-video lg:aspect-[16/10] bg-slate-100 shadow-inner">
                   <img
                     src={pair.after.src}
                     alt={pair.after.alt}
                     className="w-full h-full object-cover transition-transform duration-[2s] group-hover:scale-105"
                   />
-                  <div className="absolute top-4 right-4 md:top-6 md:right-6 bg-primary-600/90 backdrop-blur-md text-white px-3 md:px-4 py-1.5 md:py-2 text-[10px] md:text-xs font-extrabold tracking-widest uppercase rounded-full border border-white/20 shadow-lg shadow-primary-900/40">
+                  <div className="absolute top-2 right-2 md:top-6 md:right-6 bg-primary-600/90 backdrop-blur-md text-white px-2 md:px-4 py-1 md:py-2 text-[9px] md:text-xs font-extrabold tracking-widest uppercase rounded-full shadow-sm">
                     Danach
                   </div>
-                  <div className="absolute inset-0 border-2 md:border-4 border-primary-500/20 rounded-2xl md:rounded-[2rem] pointer-events-none z-10 transition-colors group-hover:border-primary-400/50"></div>
+                  <div className="hidden md:block absolute inset-0 border-2 md:border-4 border-primary-500/20 rounded-2xl md:rounded-[2rem] pointer-events-none z-10 transition-colors group-hover:border-primary-400/50"></div>
                 </div>
 
               </div>

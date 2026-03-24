@@ -12,7 +12,7 @@ const Contact = () => {
       <div className="absolute inset-0 z-0 opacity-[0.03] pointer-events-none" style={{ backgroundImage: 'radial-gradient(#3c7056 1px, transparent 1px)', backgroundSize: '30px 30px' }}></div>
 
       <div className="container mx-auto px-4 md:px-6 relative z-10">
-        <div className="bg-white/80 backdrop-blur-md lg:backdrop-blur-xl rounded-[2rem] lg:rounded-[2.5rem] shadow-xl lg:shadow-[0_30px_60px_-15px_rgba(40,70,50,0.12)] overflow-hidden border border-white">
+        <div className="bg-white rounded-2xl lg:backdrop-blur-xl md:rounded-[2.5rem] shadow-sm lg:shadow-[0_30px_60px_-15px_rgba(40,70,50,0.12)] overflow-hidden border border-slate-100">
           <div className="grid lg:grid-cols-5 h-full">
             
             {/* Left Info Panel - Now with Image Background */}
@@ -21,7 +21,7 @@ const Contact = () => {
               whileInView={{ opacity: 1 }}
               viewport={{ once: true }}
               transition={{ duration: 0.8 }}
-              className="lg:col-span-2 relative overflow-hidden p-8 sm:p-10 md:p-14 text-white"
+              className="lg:col-span-2 relative overflow-hidden p-6 sm:p-10 md:p-14 text-white"
             >
               {/* Premium Background Image with Overlay */}
               <div className="absolute inset-0 z-0">
@@ -87,9 +87,9 @@ const Contact = () => {
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.8 }}
-              className="lg:col-span-3 p-8 sm:p-10 lg:p-16 bg-white object-cover"
+              className="lg:col-span-3 p-6 sm:p-10 lg:p-16 bg-white object-cover"
             >
-              <form className="space-y-6 lg:space-y-10" onSubmit={(e) => e.preventDefault()}>
+              <form className="space-y-4 lg:space-y-10" onSubmit={(e) => e.preventDefault()}>
                 <div>
                   <h3 className="text-2xl lg:text-4xl font-serif text-slate-800 mb-2 md:mb-3">Ihre Projektanfrage</h3>
                   <p className="text-slate-500 text-base md:text-lg">Füllen Sie das Formular aus – wir melden uns im Regelfall innerhalb von 24 Stunden bei Ihnen.</p>
