@@ -14,7 +14,7 @@ const Header = () => {
   }, []);
 
   return (
-    <header className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 ${isScrolled ? 'bg-[#FAFAF8]/90 backdrop-blur-md shadow-sm py-3' : 'bg-transparent py-6'}`}>
+    <header className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 ${isScrolled ? 'bg-white/60 backdrop-blur-xl border-b border-white/40 shadow-[0_4px_30px_rgba(0,0,0,0.03)] py-3' : 'bg-transparent py-6'}`}>
       <div className="container mx-auto px-4 md:px-6">
         <div className="flex justify-between items-center">
           {/* Logo */}
@@ -50,12 +50,12 @@ const Header = () => {
 
       {/* Mobile Nav */}
       {mobileMenuOpen && (
-        <div className="lg:hidden absolute top-full left-0 w-full bg-[#FAFAF8] shadow-xl border-t border-slate-200">
+        <div className="lg:hidden absolute top-full left-0 w-full bg-white/80 backdrop-blur-xl shadow-xl border-t border-white/40">
           <ul className="flex flex-col py-4 px-6 gap-4">
-            <li><a href="#services" onClick={() => setMobileMenuOpen(false)} className="block text-xl font-serif text-slate-700 hover:text-primary-600">Leistungen</a></li>
-            <li><a href="#about" onClick={() => setMobileMenuOpen(false)} className="block text-xl font-serif text-slate-700 hover:text-primary-600">Über uns</a></li>
+            <li><a href="#services" onClick={() => setMobileMenuOpen(false)} className="block text-xl font-serif text-slate-800 hover:text-primary-600">Leistungen</a></li>
+            <li><a href="#contact" onClick={() => setMobileMenuOpen(false)} className="block text-xl font-serif text-slate-800 hover:text-primary-600">Über uns</a></li>
             <li className="pt-4 border-t border-slate-200">
-              <a href="#contact" onClick={() => setMobileMenuOpen(false)} className="bg-primary-600 text-white text-center block w-full py-4 rounded-xl font-bold mt-2 shadow-md">
+              <a href="#contact" onClick={() => setMobileMenuOpen(false)} className="bg-primary-600 text-white text-center block w-full py-3.5 rounded-xl font-bold mt-2 shadow-md">
                 Jetzt anfragen
               </a>
             </li>

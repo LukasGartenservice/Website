@@ -117,8 +117,8 @@ const Hero = () => {
               transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
             />
             
-            {/* Clean Image Wrapper - Fading Carousel */}
-            <div className="relative w-full max-w-[320px] sm:max-w-[400px] md:max-w-[500px] lg:max-w-[650px] aspect-[4/3] md:aspect-[4/5] rounded-3xl md:rounded-[3rem] md:organic-blob overflow-hidden border-[4px] md:border-[12px] border-white z-10 shadow-lg md:shadow-[0_30px_60px_-15px_rgba(44,82,60,0.3)] mx-auto">
+            {/* Organic Image Wrapper - Fading Carousel */}
+            <div className="relative w-full max-w-[320px] sm:max-w-[400px] md:max-w-[500px] lg:max-w-[650px] aspect-[1/1] md:aspect-[4/5] organic-blob overflow-hidden border-[6px] md:border-[12px] border-white z-10 shadow-xl md:shadow-[0_30px_60px_-15px_rgba(44,82,60,0.3)] mx-auto">
               <AnimatePresence>
                 <motion.img 
                   key={currentImage}
@@ -131,6 +131,7 @@ const Hero = () => {
                   className="absolute inset-0 w-full h-full object-cover"
                 />
               </AnimatePresence>
+              <div className="absolute inset-0 border-4 border-primary-100/30 organic-blob pointer-events-none z-20"></div>
             </div>
             
             {/* Floating Badge */}
