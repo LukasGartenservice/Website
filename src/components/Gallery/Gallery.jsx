@@ -1,5 +1,6 @@
+import { useState } from 'react';
 import { motion } from 'framer-motion';
-import { ArrowLeftRight } from 'lucide-react';
+import { ArrowLeftRight, ChevronDown } from 'lucide-react';
 
 const pairs = [
   { 
@@ -41,6 +42,8 @@ const pairs = [
 ];
 
 const Gallery = () => {
+  const [visibleCount, setVisibleCount] = useState(2);
+
   return (
     <section className="py-16 md:py-24 bg-slate-50 relative overflow-hidden" id="gallery">
       {/* Decorative patterns */}
@@ -60,7 +63,7 @@ const Gallery = () => {
         </div>
 
         <div className="flex flex-col gap-10 lg:gap-24">
-          {pairs.map((pair, index) => (
+          {pairs.slice(0, visibleCount).map((pair, index) => (
             <motion.div
               key={pair.id}
               initial={{ opacity: 0, y: 30 }}
@@ -111,6 +114,18 @@ const Gallery = () => {
             </motion.div>
           ))}
         </div>
+
+        {visibleCount < pairs.length && (
+          <div className="mt-12 md:mt-16 flex justify-center w-full relative z-10">
+            <button 
+              onClick={() => setVisibleCount(pairs.length)}
+              className="bg-white hover:bg-slate-50 text-primary-700 border border-primary-200 px-8 py-3.5 md:py-4.5 rounded-full font-bold text-base md:text-lg transition-all shadow-sm hover:shadow-md hover:-translate-y-1 flex items-center gap-3 group"
+            >
+              Weitere Referenzen ansehen
+              <ChevronDown className="w-5 h-5 group-hover:translate-y-1 transition-transform" />
+            </button>
+          </div>
+        )}
       </div>
     </section>
   );
