@@ -42,88 +42,93 @@ const pairs = [
 ];
 
 const Gallery = () => {
-  const [visibleCount, setVisibleCount] = useState(2);
+  const [visibleCount, setVisibleCount] = useState(3);
 
   return (
-    <section className="py-16 md:py-24 bg-slate-50 relative overflow-hidden" id="gallery">
-      {/* Decorative patterns */}
-      <div className="absolute top-0 right-0 w-full h-full bg-[radial-gradient(circle_at_top_right,rgba(40,70,50,0.03)_0%,transparent_50%)] pointer-events-none z-0"></div>
+    <section className="py-24 lg:py-40 bg-white relative" id="gallery">
+      {/* Top accent line */}
+      <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-zinc-200 to-transparent"></div>
 
-      <div className="container mx-auto px-4 md:px-6 relative z-10">
-        <div className="text-center max-w-2xl mx-auto mb-12 lg:mb-24">
-          <div className="inline-block bg-white text-primary-800 px-4 py-1.5 rounded-full text-sm font-bold tracking-wider uppercase mb-4 md:mb-6 shadow-sm border border-primary-100">
+      <div className="container mx-auto px-5 md:px-12 max-w-6xl">
+        <motion.div 
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.8 }}
+          className="mb-16 md:mb-28 max-w-2xl"
+        >
+          <span className="text-primary-600 font-bold tracking-[0.25em] text-xs uppercase mb-5 block">
             Unsere Arbeit
-          </div>
-          <h2 className="text-[2rem] leading-[1.2] md:text-5xl font-serif text-slate-800 mb-4 md:mb-6 md:leading-tight">
-            Echte <span className="text-primary-600 italic font-light drop-shadow-sm">Ergebnisse</span> aus unseren Projekten.
+          </span>
+          <h2 className="text-3xl md:text-5xl lg:text-6xl font-serif text-zinc-900 leading-[1.1] tracking-tight">
+            Echte <span className="text-primary-600 italic font-light">Ergebnisse</span><br/>
+            aus unseren Projekten.
           </h2>
-          <p className="text-lg text-slate-600 font-sans">
-            Lassen Sie sich von unseren Vorher-/Nachher-Vergleichen inspirieren. Ein Bild sagt mehr als tausend Worte.
-          </p>
-        </div>
+        </motion.div>
 
-        <div className="flex flex-col gap-10 lg:gap-24">
-          {pairs.slice(0, visibleCount).map((pair, index) => (
+        <div className="flex flex-col gap-16 lg:gap-24">
+          {pairs.slice(0, visibleCount).map((pair) => (
             <motion.div
               key={pair.id}
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-50px" }}
               transition={{ duration: 0.7 }}
-              className="bg-white p-4 md:p-8 lg:p-10 rounded-2xl md:rounded-[2.5rem] shadow-sm md:shadow-[0_20px_40px_-15px_rgba(40,70,50,0.08)] border border-slate-200 relative"
             >
               {/* Project Title */}
-              <div className="mb-4 md:mb-8 pl-1 md:text-center md:pl-0">
-                <h3 className="text-lg font-bold md:text-2xl font-serif text-slate-800">{pair.title}</h3>
-                <div className="w-8 h-1 md:w-12 md:bg-primary-200 md:mx-auto mt-2 md:mt-4 rounded-full bg-primary-300"></div>
-              </div>
+              <h3 className="text-lg md:text-xl font-serif text-zinc-800 mb-4 md:mb-6 font-semibold tracking-tight">{pair.title}</h3>
 
-              <div className="grid grid-cols-2 gap-4 md:gap-8 relative">
-                
-                {/* Center Icon */}
-                <div className="hidden md:flex absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 bg-white w-10 h-10 md:w-16 md:h-16 rounded-full items-center justify-center shadow-lg md:shadow-xl z-20 text-primary-500 border border-slate-100">
-                  <ArrowLeftRight className="w-4 h-4 md:w-7 md:h-7 opacity-70" />
+              <div className="grid grid-cols-2 gap-3 md:gap-6 relative">
+                {/* Center swap icon */}
+                <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 bg-white w-10 h-10 md:w-14 md:h-14 rounded-full flex items-center justify-center shadow-lg z-20 text-primary-600 border border-zinc-100">
+                  <ArrowLeftRight className="w-4 h-4 md:w-6 md:h-6" />
                 </div>
 
-                <div className="relative group rounded-xl md:rounded-[2rem] overflow-hidden aspect-[4/5] md:aspect-video lg:aspect-[16/10] bg-slate-100 shadow-inner">
+                {/* Before */}
+                <div className="relative group rounded-2xl md:rounded-3xl overflow-hidden aspect-[4/5] md:aspect-[16/11] bg-zinc-100">
                   <img
                     src={pair.before.src}
                     alt={pair.before.alt}
-                    className="w-full h-full object-cover transition-transform duration-[2s] group-hover:scale-105 filter grayscale-[20%] sepia-[10%] group-hover:grayscale-0 group-hover:sepia-0"
+                    className="w-full h-full object-cover transition-transform duration-[1.5s] group-hover:scale-105 filter saturate-[0.85]"
+                    loading="lazy"
                   />
-                  <div className="absolute top-2 left-2 md:top-6 md:left-6 bg-slate-800/80 backdrop-blur-md text-white px-2 md:px-4 py-1 md:py-2 text-[9px] md:text-xs font-extrabold tracking-widest uppercase rounded-full shadow-sm">
+                  <span className="absolute top-3 left-3 md:top-5 md:left-5 bg-zinc-900/70 backdrop-blur-md text-white px-3 md:px-4 py-1 md:py-1.5 text-[10px] md:text-xs font-bold tracking-widest uppercase rounded-full">
                     Davor
-                  </div>
+                  </span>
                 </div>
 
-                {/* Nachher / After */}
-                <div className="relative group rounded-xl md:rounded-[2rem] overflow-hidden aspect-[4/5] md:aspect-video lg:aspect-[16/10] bg-slate-100 shadow-inner">
+                {/* After */}
+                <div className="relative group rounded-2xl md:rounded-3xl overflow-hidden aspect-[4/5] md:aspect-[16/11] bg-zinc-100">
                   <img
                     src={pair.after.src}
                     alt={pair.after.alt}
-                    className="w-full h-full object-cover transition-transform duration-[2s] group-hover:scale-105"
+                    className="w-full h-full object-cover transition-transform duration-[1.5s] group-hover:scale-105"
+                    loading="lazy"
                   />
-                  <div className="absolute top-2 right-2 md:top-6 md:right-6 bg-primary-600/90 backdrop-blur-md text-white px-2 md:px-4 py-1 md:py-2 text-[9px] md:text-xs font-extrabold tracking-widest uppercase rounded-full shadow-sm">
+                  <span className="absolute top-3 right-3 md:top-5 md:right-5 bg-primary-600/80 backdrop-blur-md text-white px-3 md:px-4 py-1 md:py-1.5 text-[10px] md:text-xs font-bold tracking-widest uppercase rounded-full">
                     Danach
-                  </div>
-                  <div className="hidden md:block absolute inset-0 border-2 md:border-4 border-primary-500/20 rounded-2xl md:rounded-[2rem] pointer-events-none z-10 transition-colors group-hover:border-primary-400/50"></div>
+                  </span>
                 </div>
-
               </div>
             </motion.div>
           ))}
         </div>
 
         {visibleCount < pairs.length && (
-          <div className="mt-12 md:mt-16 flex justify-center w-full relative z-10">
+          <motion.div 
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            viewport={{ once: true }}
+            className="mt-16 md:mt-20 flex justify-center"
+          >
             <button 
               onClick={() => setVisibleCount(pairs.length)}
-              className="bg-white hover:bg-slate-50 text-primary-700 border border-primary-200 px-8 py-3.5 md:py-4.5 rounded-full font-bold text-base md:text-lg transition-all shadow-sm hover:shadow-md hover:-translate-y-1 flex items-center gap-3 group"
+              className="bg-zinc-900 hover:bg-zinc-800 text-white px-8 py-4 rounded-full font-bold text-base transition-all hover:-translate-y-1 flex items-center gap-3 group shadow-lg"
             >
-              Weitere Referenzen ansehen
+              Weitere Referenzen
               <ChevronDown className="w-5 h-5 group-hover:translate-y-1 transition-transform" />
             </button>
-          </div>
+          </motion.div>
         )}
       </div>
     </section>
