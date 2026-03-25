@@ -2,6 +2,11 @@ import { motion } from 'framer-motion';
 import { Send } from 'lucide-react';
 
 const Contact = () => {
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    window.location.hash = '#vielen-dank';
+  };
+
   return (
     <section className="py-24 lg:py-40 bg-zinc-950 text-white relative overflow-hidden" id="contact">
       <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-primary-600 rounded-full blur-[150px] opacity-20 pointer-events-none"></div>
@@ -36,7 +41,7 @@ const Contact = () => {
             transition={{ duration: 0.8, delay: 0.2 }}
             className="bg-white/[0.03] backdrop-blur-3xl rounded-[2.5rem] p-8 md:p-14 border border-white/10 shadow-2xl shadow-black/50"
           >
-            <form className="space-y-10" onSubmit={(e) => e.preventDefault()}>
+            <form className="space-y-10" onSubmit={handleSubmit}>
               <div className="space-y-2">
                 <input 
                   type="text" 
