@@ -60,8 +60,8 @@ const Hero = () => {
 
             <div className="flex items-center gap-4 justify-center lg:justify-start pt-6 border-t border-zinc-200/60">
               <div className="flex -space-x-2 shrink-0">
-                <div className="w-10 h-10 rounded-full border-2 border-white bg-primary-200 overflow-hidden"><img src="https://images.unsplash.com/photo-1592520113018-180c85c3b9b4?w=100&h=100&fit=crop" alt="Customer" className="w-full h-full object-cover" /></div>
-                <div className="w-10 h-10 rounded-full border-2 border-white bg-accent-200 overflow-hidden"><img src="https://images.unsplash.com/photo-1544717305-2782549b5136?w=100&h=100&fit=crop" alt="Customer" className="w-full h-full object-cover" /></div>
+                <div className="w-10 h-10 rounded-full border-2 border-white bg-primary-200 overflow-hidden"><img src="https://i.pravatar.cc/100?img=33" alt="Customer" className="w-full h-full object-cover" /></div>
+                <div className="w-10 h-10 rounded-full border-2 border-white bg-accent-200 overflow-hidden"><img src="https://i.pravatar.cc/100?img=47" alt="Customer" className="w-full h-full object-cover" /></div>
                 <div className="w-10 h-10 rounded-full border-2 border-white bg-zinc-900 text-white flex items-center justify-center font-bold text-xs">+50</div>
               </div>
               <p className="text-sm text-zinc-500 text-left">Glückliche Kunden<br/>in der Region</p>
