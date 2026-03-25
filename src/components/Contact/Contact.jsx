@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion';
-import { MapPin, Phone, Mail, Clock, Send, Leaf } from 'lucide-react';
+import { MapPin, Clock, Send, Leaf } from 'lucide-react';
 
 const Contact = () => {
   return (
@@ -55,26 +55,6 @@ const Contact = () => {
                     <div className="pt-1">
                       <h4 className="text-primary-300 text-xs tracking-[0.2em] uppercase mb-1.5 font-bold">Standort</h4>
                       <p className="text-white font-serif text-xl tracking-wide">An der Obstwiese 9<br />42799 Leichlingen</p>
-                    </div>
-                  </div>
-                  
-                  <div className="flex items-start gap-5 group">
-                    <div className="w-14 h-14 bg-white/10 backdrop-blur-md rounded-2xl flex items-center justify-center shrink-0 border border-white/20 group-hover:bg-primary-500/40 group-hover:border-primary-400/50 transition-all duration-300 shadow-lg">
-                      <Phone className="w-6 h-6 text-primary-200 group-hover:text-white transition-colors" />
-                    </div>
-                    <div className="pt-1">
-                      <h4 className="text-primary-300 text-xs tracking-[0.2em] uppercase mb-1.5 font-bold">Telefon</h4>
-                      <p className="text-white font-serif text-xl tracking-wide"><a href="tel:+49123456789" className="hover:text-primary-200 transition-colors">+49 (0) 123 456 789</a></p>
-                    </div>
-                  </div>
-
-                  <div className="flex items-start gap-5 group">
-                    <div className="w-14 h-14 bg-white/10 backdrop-blur-md rounded-2xl flex items-center justify-center shrink-0 border border-white/20 group-hover:bg-primary-500/40 group-hover:border-primary-400/50 transition-all duration-300 shadow-lg">
-                      <Mail className="w-6 h-6 text-primary-200 group-hover:text-white transition-colors" />
-                    </div>
-                    <div className="pt-1">
-                      <h4 className="text-primary-300 text-xs tracking-[0.2em] uppercase mb-1.5 font-bold">E-Mail</h4>
-                      <p className="text-white font-serif text-xl tracking-wide"><a href="mailto:info@gruenblick-gartenservice.de" className="hover:text-primary-200 transition-colors drop-shadow-sm">info@gruenblick.de</a></p>
                     </div>
                   </div>
                 </div>

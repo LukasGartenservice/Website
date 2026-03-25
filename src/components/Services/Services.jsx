@@ -85,7 +85,7 @@ const Services = () => {
           </motion.div>
         </div>
         
-        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-5 lg:gap-8">
+        <div className="flex overflow-x-auto pb-8 md:pb-0 -mx-4 px-4 sm:mx-0 sm:px-0 sm:grid sm:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-5 lg:gap-8 snap-x snap-mandatory scroll-smooth [scrollbar-width:none] [-ms-overflow-style:none] [&::-webkit-scrollbar]:hidden py-4">
           {servicesData.map((service, index) => {
             const Icon = service.icon;
             return (
@@ -95,26 +95,27 @@ const Services = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, margin: "-20px" }}
                 transition={{ duration: 0.5, delay: index * 0.1, ease: "easeOut" }}
-                className="group cursor-pointer h-full"
+                className="group cursor-pointer h-full min-w-[280px] w-[85vw] sm:w-auto sm:min-w-0 flex-shrink-0 snap-center"
               >
-                <div className={`bg-white rounded-2xl md:rounded-[2.5rem] p-5 md:p-6 lg:p-8 h-full transition-all duration-300 md:duration-500 group-hover:-translate-y-2 hover:bg-white shadow-sm md:shadow-[0_8px_30px_rgb(0,0,0,0.04)] ${service.shadowColor} group-hover:shadow-md border border-slate-100 md:border-white/80 relative overflow-hidden flex flex-col`}>
+                <div className={`bg-white/80 md:bg-white backdrop-blur-xl md:backdrop-filter-none rounded-3xl md:rounded-[2.5rem] p-6 lg:p-8 h-full transition-all duration-300 md:duration-500 group-hover:-translate-y-2 hover:bg-white shadow-[0_8px_30px_rgb(0,0,0,0.06)] md:shadow-[0_8px_30px_rgb(0,0,0,0.04)] ${service.shadowColor} group-hover:shadow-[0_20px_40px_rgb(0,0,0,0.08)] border border-white/60 md:border-white/80 relative overflow-hidden flex flex-col`}>
                   
-                  {/* Decorative corner shape */}
-                  <div className="hidden md:block absolute -top-12 -right-12 w-32 h-32 bg-gradient-to-br from-white to-slate-50 rounded-full opacity-50 group-hover:scale-150 transition-transform duration-700 pointer-events-none"></div>
+                  {/* Modern Glass Reflection on Mobile & Desktop Corner Shape */}
+                  <div className="absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-white/90 to-transparent rounded-bl-full opacity-70 pointer-events-none z-0"></div>
+                  <div className="absolute -bottom-20 -right-20 w-40 h-40 bg-white/40 md:bg-transparent rounded-full blur-2xl opacity-50 group-hover:opacity-80 transition-opacity duration-500 pointer-events-none z-0"></div>
 
-                  <div className={`w-12 h-12 md:w-16 md:h-16 lg:w-20 lg:h-20 ${service.blobColor} ${service.color} rounded-xl md:organic-blob flex items-center justify-center mb-4 md:mb-6 lg:mb-8 transition-transform duration-300 group-hover:scale-105 shadow-sm relative z-10`}>
+                  <div className={`w-12 h-12 md:w-16 md:h-16 lg:w-20 lg:h-20 ${service.blobColor} ${service.color} rounded-2xl md:organic-blob flex items-center justify-center mb-6 md:mb-6 lg:mb-8 transition-transform duration-300 group-hover:scale-110 shadow-sm relative z-10`}>
                     <Icon className="w-5 h-5 md:w-7 md:h-7 lg:w-8 lg:h-8" strokeWidth={2} />
                   </div>
                   
-                  <h3 className="text-lg md:text-xl lg:text-2xl font-serif font-bold text-slate-800 mb-2 md:mb-3 lg:mb-4 relative z-10">{service.title}</h3>
-                  <p className="text-sm lg:text-base text-slate-500 mb-6 lg:mb-10 leading-relaxed font-sans relative z-10">
+                  <h3 className="text-xl lg:text-2xl font-serif font-bold text-slate-800 mb-3 lg:mb-4 relative z-10">{service.title}</h3>
+                  <p className="text-[15px] lg:text-base text-slate-500 mb-8 lg:mb-10 leading-relaxed font-sans relative z-10 flex-grow">
                     {service.description}
                   </p>
                   
                   <div className="mt-auto flex items-center justify-between relative z-10">
-                    <span className="text-sm font-bold text-slate-400 group-hover:text-primary-600 transition-colors uppercase tracking-wider">Mehr erfahren</span>
-                    <div className="w-12 h-12 bg-white rounded-full flex items-center justify-center group-hover:bg-primary-600 group-hover:text-white transition-all duration-300 shadow-sm border border-slate-100 group-hover:border-primary-600">
-                      <ArrowRight className="w-5 h-5 text-slate-400 group-hover:text-white -rotate-45 group-hover:rotate-0 transition-transform duration-500" />
+                    <span className="text-xs md:text-sm font-bold text-slate-400 group-hover:text-primary-600 transition-colors uppercase tracking-wider">Mehr erfahren</span>
+                    <div className="w-10 h-10 md:w-12 md:h-12 bg-white rounded-full flex items-center justify-center group-hover:bg-primary-600 group-hover:text-white transition-all duration-300 shadow-sm border border-slate-100 group-hover:border-primary-600">
+                      <ArrowRight className="w-4 h-4 md:w-5 md:h-5 text-slate-400 group-hover:text-white -rotate-45 group-hover:rotate-0 transition-transform duration-500" />
                     </div>
                   </div>
                 </div>
