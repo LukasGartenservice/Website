@@ -75,7 +75,7 @@ const Hero = () => {
             transition={{ duration: 1, ease: "easeOut", delay: 0.2 }}
             className="relative w-full flex justify-center lg:justify-end"
           >
-            <div className="relative w-full max-w-[340px] sm:max-w-[420px] lg:max-w-[520px] aspect-[4/5] rounded-[2.5rem] overflow-hidden shadow-2xl shadow-zinc-900/15">
+            <div className="relative w-full max-w-[300px] sm:max-w-[380px] lg:max-w-[520px] aspect-[1/1] md:aspect-[4/5] organic-blob overflow-hidden border-[6px] md:border-[10px] border-white z-10 shadow-2xl shadow-zinc-900/15 mx-auto">
               <AnimatePresence>
                 <motion.img 
                   key={currentImage}

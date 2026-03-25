@@ -42,7 +42,7 @@ const pairs = [
 ];
 
 const Gallery = () => {
-  const [visibleCount, setVisibleCount] = useState(3);
+  const [visibleCount, setVisibleCount] = useState(2);
 
   return (
     <section className="py-24 lg:py-40 bg-white relative" id="gallery">
