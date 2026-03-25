@@ -1,86 +1,91 @@
 import { motion } from 'framer-motion';
-import { ArrowUpRight } from 'lucide-react';
+import { Shovel, Scissors, TreeDeciduous, Droplets, ArrowRight } from 'lucide-react';
 
 const servicesData = [
   { 
-    id: '01', 
+    id: 1, 
     title: 'Rasenpflege', 
-    description: 'Vertikutieren, Düngen & Mähen für dichtes Grün. Wir erwecken Ihren Rasen zu neuem Leben.' 
+    description: 'Vertikutieren, Düngen & Mähen für dichtes Grün. Wir erwecken Ihren Rasen zu neuem Leben und kümmern uns um die nachhaltige Pflege.',
+    icon: Shovel
   },
   { 
-    id: '02', 
+    id: 2, 
     title: 'Heckenschnitt', 
-    description: 'Präziser Form- und Pflegeschnitt. Für gesundes Wachstum und perfekte, klare Konturen.' 
+    description: 'Präziser Form- und Pflegeschnitt. Für gesundes Wachstum und perfekte, klare Konturen an Grundstücksgrenzen und in Vorgärten.',
+    icon: Scissors
   },
   { 
-    id: '03', 
+    id: 3, 
     title: 'Baumpflege', 
-    description: 'Professioneller Obstbaumschnitt und sichere Fällungen durch erfahrene Kletter-Spezialisten.' 
+    description: 'Professioneller Obstbaumschnitt und sichere Fällungen durch erfahrene Kletter-Spezialisten für den Erhalt Ihres Baumbestands.',
+    icon: TreeDeciduous
   },
   { 
-    id: '04', 
+    id: 4, 
     title: 'Flächenreinigung', 
-    description: 'Schonende Hochdruckreinigung von Terrassen, Wegen und Einfahrten. Frei von Moos & Schmutz.' 
+    description: 'Schonende Hochdruckreinigung von Terrassen, Wegen und Einfahrten. Befreien Sie Ihre Flächen professionell und nachhaltig von Moos.',
+    icon: Droplets
   }
 ];
 
 const Services = () => {
   return (
-    <section className="py-24 lg:py-40 bg-zinc-50 relative" id="services">
-      {/* Subtle gradient accent */}
-      <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-primary-300/40 to-transparent"></div>
-
-      <div className="container mx-auto px-5 md:px-12 max-w-6xl">
+    <section className="py-24 lg:py-36 bg-[#fafafa] relative" id="services">
+      <div className="container mx-auto px-5 md:px-12 max-w-7xl">
         <motion.div 
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.8 }}
-          className="mb-16 md:mb-28 max-w-2xl"
+          className="mb-16 md:mb-24 text-center max-w-3xl mx-auto"
         >
           <span className="text-primary-600 font-bold tracking-[0.25em] text-xs uppercase mb-5 block">
             Unsere Expertise
           </span>
-          <h2 className="text-3xl md:text-5xl lg:text-6xl font-serif text-zinc-900 leading-[1.1] tracking-tight">
-            Präzision für <br/>
-            <span className="text-primary-600 italic font-light">Ihren Garten.</span>
+          <h2 className="text-4xl md:text-5xl lg:text-6xl font-serif text-zinc-900 leading-[1.15] tracking-tight mb-6">
+            Kompetenz für Ihr <br className="hidden md:block"/>
+            <span className="text-primary-600 italic font-light">wichtigstes Grün.</span>
           </h2>
+          <p className="text-zinc-500 font-light text-lg md:text-xl">Entdecken Sie unsere maßgeschneiderten Dienstleistungen für einen Garten, der zu jeder Jahreszeit Freude bereitet.</p>
         </motion.div>
         
-        <div className="flex flex-col border-t border-zinc-200/80">
-          {servicesData.map((service, index) => (
-            <motion.a 
-              href="#contact"
-              key={service.id} 
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: index * 0.08 }}
-              className="group relative border-b border-zinc-200/80 py-8 md:py-14 flex items-start md:items-center gap-5 md:gap-10 lg:gap-16 hover:bg-white/80 transition-all duration-500 px-4 md:px-8 -mx-4 md:-mx-8 cursor-pointer"
-            >
-              {/* Number */}
-              <span className="text-zinc-200 font-serif text-3xl md:text-5xl lg:text-6xl group-hover:text-primary-300 transition-colors duration-500 shrink-0 w-[50px] md:w-[80px] lg:w-[100px] pt-1 md:pt-0">
-                {service.id}
-              </span>
-              
-              {/* Title + Description stacked on mobile, side by side on desktop */}
-              <div className="flex-grow min-w-0">
-                <div className="flex flex-col lg:flex-row lg:items-center lg:gap-16">
-                  <h3 className="text-2xl md:text-3xl lg:text-[2.75rem] font-serif text-zinc-900 group-hover:text-primary-700 transition-colors duration-500 shrink-0 lg:w-[280px] xl:w-[320px] leading-tight mb-2 lg:mb-0">
-                    {service.title}
-                  </h3>
-                  <p className="text-zinc-400 font-sans text-base md:text-lg font-light leading-relaxed flex-grow">
-                    {service.description}
-                  </p>
-                </div>
-              </div>
+        <div className="grid md:grid-cols-2 gap-6 lg:gap-10">
+          {servicesData.map((service, index) => {
+            const Icon = service.icon;
+            return (
+              <motion.a 
+                href="#contact"
+                key={service.id} 
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6, delay: index * 0.1 }}
+                className="group relative bg-white rounded-[2.5rem] p-8 md:p-12 lg:p-14 shadow-[0_15px_50px_-15px_rgba(0,0,0,0.05)] hover:shadow-[0_25px_60px_-15px_rgba(40,70,50,0.12)] border border-zinc-100 transition-all duration-500 hover:-translate-y-2 flex flex-col items-start overflow-hidden"
+              >
+                {/* Decorative background glow on hover */}
+                <div className="absolute top-0 right-0 w-80 h-80 bg-primary-100/50 rounded-full blur-[100px] opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none"></div>
 
-              {/* Arrow */}
-              <div className="w-12 h-12 md:w-16 md:h-16 rounded-full border border-zinc-200 flex items-center justify-center group-hover:bg-primary-600 group-hover:border-primary-600 transition-all duration-500 shrink-0 self-center">
-                <ArrowUpRight className="w-5 h-5 md:w-7 md:h-7 text-zinc-300 group-hover:text-white group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-all duration-500" />
-              </div>
-            </motion.a>
-          ))}
+                <div className="w-16 h-16 md:w-20 md:h-20 bg-zinc-50 rounded-2xl flex items-center justify-center mb-8 group-hover:bg-primary-600 group-hover:scale-110 transition-all duration-500 shadow-sm relative z-10 border border-zinc-100 group-hover:border-primary-600">
+                  <Icon className="w-8 h-8 md:w-10 md:h-10 text-zinc-400 group-hover:text-white transition-colors duration-500 stroke-[1.5]" />
+                </div>
+                
+                <h3 className="text-2xl md:text-3xl lg:text-4xl font-serif text-zinc-900 mb-4 group-hover:text-primary-800 transition-colors duration-300 relative z-10">
+                  {service.title}
+                </h3>
+                
+                <p className="text-zinc-500 font-sans text-base md:text-lg font-light leading-relaxed mb-12 relative z-10 flex-grow">
+                  {service.description}
+                </p>
+
+                <div className="mt-auto flex items-center justify-between w-full relative z-10">
+                  <span className="text-sm font-bold text-zinc-400 group-hover:text-primary-600 uppercase tracking-widest transition-colors duration-300">Anfragen</span>
+                  <div className="w-10 h-10 rounded-full bg-zinc-50 border border-zinc-100 flex items-center justify-center group-hover:bg-primary-600 group-hover:border-primary-600 transition-colors duration-300 shadow-sm">
+                    <ArrowRight className="w-4 h-4 text-zinc-400 group-hover:text-white group-hover:translate-x-0.5 transition-all" />
+                  </div>
+                </div>
+              </motion.a>
+            );
+          })}
         </div>
       </div>
     </section>
