@@ -1,123 +1,75 @@
 import { motion } from 'framer-motion';
-import { Shovel, Scissors, TreeDeciduous, Droplets, ArrowRight } from 'lucide-react';
+import { ArrowUpRight } from 'lucide-react';
 
 const servicesData = [
-  {
-    id: 1,
-    title: 'Rasenpflege',
-    description: 'Mähen, Vertikutieren und Düngen für ein sattes, dichtes Grün. Wir bringen Ihren Rasen auf Vordermann.',
-    icon: Shovel,
-    color: 'text-primary-600',
-    blobColor: 'bg-primary-100',
-    shadowColor: 'group-hover:shadow-primary-500/20'
+  { 
+    id: '01', 
+    title: 'Rasenpflege', 
+    description: 'Vertikutieren, Düngen & Mähen für dichtes Grün. Wir erwecken Ihren Rasen zu neuem Leben.' 
   },
-  {
-    id: 2,
-    title: 'Heckenschnitt',
-    description: 'Präziser Form- und Pflegeschnitt für Hecken und Sträucher. Für gesundes Wachstum und klare Linien.',
-    icon: Scissors,
-    color: 'text-accent-600',
-    blobColor: 'bg-accent-100',
-    shadowColor: 'group-hover:shadow-accent-500/20'
+  { 
+    id: '02', 
+    title: 'Heckenschnitt', 
+    description: 'Präziser Form- und Pflegeschnitt. Für gesundes Wachstum und perfekte, klare Konturen.' 
   },
-  {
-    id: 3,
-    title: 'Baumpflege',
-    description: 'Sichere Fällungen und professioneller Obstbaumschnitt durch absolut erfahrene Kletter-Profis.',
-    icon: TreeDeciduous,
-    color: 'text-emerald-600',
-    blobColor: 'bg-emerald-100',
-    shadowColor: 'group-hover:shadow-emerald-500/20'
+  { 
+    id: '03', 
+    title: 'Baumpflege', 
+    description: 'Professioneller Obstbaumschnitt und sichere Fällungen durch erfahrene Kletter-Spezialisten.' 
   },
-  {
-    id: 4,
-    title: 'Hochdruckreinigung',
-    description: 'Gründliche und schonende Reinigung von Terrassen, Wegen und Einfahrten. Befreien Sie Flächen von Moos & Schmutz.',
-    icon: Droplets,
-    color: 'text-cyan-600',
-    blobColor: 'bg-cyan-100',
-    shadowColor: 'group-hover:shadow-cyan-500/20'
+  { 
+    id: '04', 
+    title: 'Flächenreinigung', 
+    description: 'Schonende Hochdruckreinigung von Terrassen, Wegen und Einfahrten. Frei von Moos & Schmutz.' 
   }
 ];
 
 const Services = () => {
   return (
-    <section className="py-16 lg:py-36 relative overflow-hidden bg-slate-50" id="services">
-      {/* Premium Background Elements */}
-      <div className="absolute inset-0 z-0 opacity-40">
-        <div className="hidden md:block absolute top-0 right-0 w-[800px] h-[800px] bg-primary-200 rounded-full mix-blend-multiply filter blur-[100px] opacity-40 animate-pulse-slow"></div>
-        <div className="hidden md:block absolute bottom-0 left-0 w-[600px] h-[600px] bg-accent-100 rounded-full mix-blend-multiply filter blur-[100px] opacity-50 animation-delay-2000"></div>
-        <div className="hidden lg:block absolute top-1/2 left-1/3 w-[500px] h-[500px] bg-emerald-100/50 rounded-full mix-blend-multiply filter blur-[120px] opacity-40 animation-delay-4000"></div>
-      </div>
-      
-      <PremiumPatternBackground />
-
-      <div className="container mx-auto px-4 md:px-6 relative z-10">
-        <div className="flex flex-col md:flex-row gap-12 lg:gap-20 items-end mb-24">
-          <motion.div 
-            initial={{ opacity: 0, x: -30 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true, margin: "-100px" }}
-            className="md:w-3/5"
-          >
-            <div className="inline-block bg-white/80 backdrop-blur-md px-4 py-1.5 rounded-full text-sm font-bold text-primary-600 tracking-wider uppercase mb-6 shadow-sm border border-primary-100">
-              Unser Angebot
-            </div>
-            <h2 className="text-[2rem] leading-[1.2] md:text-5xl lg:text-6xl xl:text-[64px] font-serif text-slate-800 mb-6 md:leading-[1.1]">
-              Alles, was Ihr Garten <br/><span className="text-primary-600 relative inline-block">
-                braucht.
-                <svg className="absolute -bottom-2 left-0 w-full h-3 text-accent-300 opacity-70" viewBox="0 0 100 20" preserveAspectRatio="none"><path d="M0,10 Q50,20 100,10" stroke="currentColor" strokeWidth="4" fill="none"/></svg>
-              </span>
-            </h2>
-          </motion.div>
-          <motion.div 
-            initial={{ opacity: 0, x: 30 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            className="md:w-2/5"
-          >
-            <div className="relative p-8 bg-white/60 backdrop-blur-xl rounded-2xl border border-white/80 shadow-lg shadow-primary-900/5">
-              <div className="absolute top-0 left-0 w-1.5 h-full bg-gradient-to-b from-primary-400 to-primary-600 rounded-l-2xl"></div>
-              <p className="text-lg text-slate-600 leading-relaxed font-sans">
-                Jeder Garten ist einzigartig. Wir bieten <strong className="text-slate-800 font-semibold">maßgeschneiderte Pflegekonzepte</strong> für Ihr wertvolles Stück Natur, ausgeführt von erfahrenen Profis.
-              </p>
-            </div>
-          </motion.div>
-        </div>
+    <section className="py-24 lg:py-40 bg-zinc-50" id="services">
+      <div className="container mx-auto px-6 md:px-12 max-w-7xl">
+        <motion.div 
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.8 }}
+          className="mb-20 md:mb-32 max-w-2xl"
+        >
+          <span className="text-primary-600 font-bold tracking-[0.25em] text-xs uppercase mb-6 block">
+            Unsere Expertise
+          </span>
+          <h2 className="text-4xl md:text-6xl lg:text-[5rem] font-serif text-zinc-900 leading-[1.1] tracking-tight">
+            Präzision für <br/>
+            <span className="text-primary-600 italic font-light">Ihren Garten.</span>
+          </h2>
+        </motion.div>
         
-        <div className="flex overflow-x-auto pb-8 md:pb-0 -mx-4 px-4 sm:mx-0 sm:px-0 sm:grid sm:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-5 lg:gap-8 snap-x snap-mandatory scroll-smooth [scrollbar-width:none] [-ms-overflow-style:none] [&::-webkit-scrollbar]:hidden py-4">
+        <div className="flex flex-col border-t border-zinc-200">
           {servicesData.map((service, index) => {
-            const Icon = service.icon;
             return (
               <motion.div 
                 key={service.id} 
-                initial={{ opacity: 0, y: 30 }}
+                initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, margin: "-20px" }}
-                transition={{ duration: 0.5, delay: index * 0.1, ease: "easeOut" }}
-                className="group cursor-pointer h-full min-w-[280px] w-[85vw] sm:w-auto sm:min-w-0 flex-shrink-0 snap-center"
+                viewport={{ once: true }}
+                transition={{ duration: 0.6, delay: index * 0.1 }}
+                className="group relative border-b border-zinc-200 py-10 md:py-16 flex flex-col md:flex-row md:items-center gap-6 md:gap-16 hover:bg-white transition-all duration-500 px-6 -mx-6 rounded-3xl md:rounded-full md:px-8 md:-mx-8 cursor-pointer"
               >
-                <div className={`bg-white/80 md:bg-white backdrop-blur-xl md:backdrop-filter-none rounded-3xl md:rounded-[2.5rem] p-6 lg:p-8 h-full transition-all duration-300 md:duration-500 group-hover:-translate-y-2 hover:bg-white shadow-[0_8px_30px_rgb(0,0,0,0.06)] md:shadow-[0_8px_30px_rgb(0,0,0,0.04)] ${service.shadowColor} group-hover:shadow-[0_20px_40px_rgb(0,0,0,0.08)] border border-white/60 md:border-white/80 relative overflow-hidden flex flex-col`}>
-                  
-                  {/* Modern Glass Reflection on Mobile & Desktop Corner Shape */}
-                  <div className="absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-white/90 to-transparent rounded-bl-full opacity-70 pointer-events-none z-0"></div>
-                  <div className="absolute -bottom-20 -right-20 w-40 h-40 bg-white/40 md:bg-transparent rounded-full blur-2xl opacity-50 group-hover:opacity-80 transition-opacity duration-500 pointer-events-none z-0"></div>
-
-                  <div className={`w-12 h-12 md:w-16 md:h-16 lg:w-20 lg:h-20 ${service.blobColor} ${service.color} rounded-2xl md:organic-blob flex items-center justify-center mb-6 md:mb-6 lg:mb-8 transition-transform duration-300 group-hover:scale-110 shadow-sm relative z-10`}>
-                    <Icon className="w-5 h-5 md:w-7 md:h-7 lg:w-8 lg:h-8" strokeWidth={2} />
-                  </div>
-                  
-                  <h3 className="text-xl lg:text-2xl font-serif font-bold text-slate-800 mb-3 lg:mb-4 relative z-10">{service.title}</h3>
-                  <p className="text-[15px] lg:text-base text-slate-500 mb-8 lg:mb-10 leading-relaxed font-sans relative z-10 flex-grow">
+                <div className="text-zinc-300 font-serif text-4xl md:text-6xl group-hover:text-primary-200 transition-colors duration-500 shrink-0 min-w[80px]">
+                  {service.id}
+                </div>
+                
+                <div className="flex-grow flex flex-col md:flex-row md:items-center gap-4 md:gap-16">
+                  <h3 className="text-3xl md:text-4xl lg:text-5xl font-serif text-zinc-900 group-hover:text-primary-700 transition-colors duration-500 shrink-0 md:w-1/3">
+                    {service.title}
+                  </h3>
+                  <p className="text-zinc-500 font-sans text-lg md:text-xl font-light leading-relaxed max-w-xl md:ml-auto">
                     {service.description}
                   </p>
-                  
-                  <div className="mt-auto flex items-center justify-between relative z-10">
-                    <span className="text-xs md:text-sm font-bold text-slate-400 group-hover:text-primary-600 transition-colors uppercase tracking-wider">Mehr erfahren</span>
-                    <div className="w-10 h-10 md:w-12 md:h-12 bg-white rounded-full flex items-center justify-center group-hover:bg-primary-600 group-hover:text-white transition-all duration-300 shadow-sm border border-slate-100 group-hover:border-primary-600">
-                      <ArrowRight className="w-4 h-4 md:w-5 md:h-5 text-slate-400 group-hover:text-white -rotate-45 group-hover:rotate-0 transition-transform duration-500" />
-                    </div>
-                  </div>
+                </div>
+
+                <div className="hidden lg:flex w-20 h-20 rounded-full border border-zinc-200 items-center justify-center group-hover:bg-primary-600 group-hover:border-primary-600 group-hover:text-white transition-all duration-500 shrink-0">
+                  <ArrowUpRight className="w-8 h-8 opacity-50 group-hover:opacity-100 group-hover:translate-x-1 group-hover:-translate-y-1 transition-all duration-500" />
                 </div>
               </motion.div>
             );
@@ -127,11 +79,5 @@ const Services = () => {
     </section>
   );
 };
-
-// Intricate organic pattern background
-const PremiumPatternBackground = () => (
-  <div className="absolute inset-0 z-0 opacity-20 pointer-events-none" style={{ backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M54.627 0l.83.83-1.66 1.66-.83-.83.83-.83v-.83zm-2.49 0l.83.83-1.66 1.66-.83-.83.83-.83v-.83zm-2.49 0l.83.83-1.66 1.66-.83-.83.83-.83v-.83zm-2.49 0l.83.83-1.66 1.66-.83-.83.83-.83v-.83zm-2.49 0l.83.83-1.66 1.66-.83-.83.83-.83v-.83zm-2.49 0l.83.83-1.66 1.66-.83-.83.83-.83v-.83zm-2.49 0l.83.83-1.66 1.66-.83-.83.83-.83v-.83zm-2.49 0l.83.83-1.66 1.66-.83-.83.83-.83v-.83zm-2.49 0l.83.83-1.66 1.66-.83-.83.83-.83v-.83zm-2.49 0l.83.83-1.66 1.66-.83-.83.83-.83v-.83zm-2.49 0l.83.83-1.66 1.66-.83-.83.83-.83v-.83zm-2.49 0l.83.83-1.66 1.66-.83-.83.83-.83v-.83zm-2.49 0l.83.83-1.66 1.66-.83-.83.83-.83v-.83zm-2.49 0l.83.83-1.66 1.66-.83-.83.83-.83v-.83zm-2.49 0l.83.83-1.66 1.66-.83-.83.83-.83v-.83zm-2.49 0l.83.83-1.66 1.66-.83-.83.83-.83v-.83zm-2.49 0l.83.83-1.66 1.66-.83-.83.83-.83v-.83zm-2.49 0l.83.83-1.66 1.66-.83-.83.83-.83v-.83zm-2.49 0l.83.83-1.66 1.66-.83-.83.83-.83v-.83zm-2.49 0l.83.83-1.66 1.66-.83-.83.83-.83v-.83z' fill='%239bc8b0' fill-opacity='0.15' fill-rule='evenodd'/%3E%3C/svg%3E")` }}>
-  </div>
-);
 
 export default Services;
