@@ -77,8 +77,8 @@ const Footer = () => {
             &copy; {new Date().getFullYear()} Grünblick Gartenservice
           </p>
           <div className="flex items-center gap-6 text-sm text-zinc-600">
-            <a href="/impressum" className="hover:text-white transition-colors">Impressum</a>
-            <a href="/datenschutz" className="hover:text-white transition-colors">Datenschutz</a>
+            <a href="#impressum" className="hover:text-white transition-colors">Impressum</a>
+            <a href="#datenschutz" className="hover:text-white transition-colors">Datenschutz</a>
             <div className="flex items-center gap-1.5 pl-6 border-l border-white/10 group cursor-default">
               <span className="text-[10px] uppercase tracking-[0.15em] font-medium text-zinc-500">Designed by</span>
               <img src="/pm-logo.png" alt="Prestia Media Logo" className="w-5 h-5 object-contain opacity-50 group-hover:opacity-100 transition-opacity" />

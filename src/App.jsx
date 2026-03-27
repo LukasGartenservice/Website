@@ -6,38 +6,47 @@ import Services from './components/Services/Services'
 import Gallery from './components/Gallery/Gallery'
 import Contact from './components/Contact/Contact'
 import VielenDank from './components/VielenDank/VielenDank'
+import Impressum from './components/Legal/Impressum'
 
 function App() {
-  const [isSuccessPage, setIsSuccessPage] = useState(false);
+  const [currentPath, setCurrentPath] = useState('');
 
   useEffect(() => {
     const handleHashChange = () => {
-      setIsSuccessPage(window.location.hash === '#vielen-dank');
-      if (window.location.hash === '#vielen-dank') {
+      const hash = window.location.hash.replace('#', '');
+      setCurrentPath(hash);
+      if (hash) {
         window.scrollTo(0, 0);
       }
     };
     
-    // Check on initial load
     handleHashChange();
-
     window.addEventListener('hashchange', handleHashChange);
     return () => window.removeEventListener('hashchange', handleHashChange);
   }, []);
 
+  const renderContent = () => {
+    switch (currentPath) {
+      case 'vielen-dank':
+        return <VielenDank />;
+      case 'impressum':
+        return <Impressum />;
+      default:
+        return (
+          <main>
+            <Hero />
+            <Services />
+            <Gallery />
+            <Contact />
+          </main>
+        );
+    }
+  };
+
   return (
     <>
       <Header />
-      {isSuccessPage ? (
-        <VielenDank />
-      ) : (
-        <main>
-          <Hero />
-          <Services />
-          <Gallery />
-          <Contact />
-        </main>
-      )}
+      {renderContent()}
       <Footer />
     </>
   )
