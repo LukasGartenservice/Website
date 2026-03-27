@@ -28,7 +28,7 @@ const Footer = () => {
               <img 
                 src="/logo.png" 
                 alt="Grünblick Logo" 
-                className="w-12 h-12 object-contain" 
+                className="w-8 h-8 object-contain" 
               />
               <span className="text-2xl font-serif font-bold tracking-tight text-white">
                 Grünblick <span className="text-primary-400 italic font-light">Gartenservice</span>
