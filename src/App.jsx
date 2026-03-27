@@ -7,6 +7,7 @@ import Gallery from './components/Gallery/Gallery'
 import Contact from './components/Contact/Contact'
 import VielenDank from './components/VielenDank/VielenDank'
 import Impressum from './components/Legal/Impressum'
+import Datenschutz from './components/Legal/Datenschutz'
 
 function App() {
   const [currentPath, setCurrentPath] = useState('');
@@ -31,6 +32,8 @@ function App() {
         return <VielenDank />;
       case 'impressum':
         return <Impressum />;
+      case 'datenschutz':
+        return <Datenschutz />;
       default:
         return (
           <main>
