@@ -1,15 +1,15 @@
-import { Leaf, Instagram, Facebook, MapPin, ArrowRight } from 'lucide-react';
+import { Leaf, Instagram, MapPin, ArrowRight } from 'lucide-react';
 
 const Footer = () => {
   return (
-    <footer className="bg-zinc-950 text-white pt-24 pb-10 relative overflow-hidden font-sans">
+    <footer className="bg-primary-950 text-white pt-24 pb-10 relative overflow-hidden font-sans">
       {/* Subtle glow */}
-      <div className="absolute -top-[300px] right-0 w-[600px] h-[600px] bg-primary-800/15 rounded-full blur-[150px] pointer-events-none"></div>
+      <div className="absolute -top-[300px] right-0 w-[600px] h-[600px] bg-primary-800/10 rounded-full blur-[150px] pointer-events-none"></div>
       
       <div className="container mx-auto px-5 md:px-12 max-w-6xl relative z-10">
         
         {/* CTA Banner */}
-        <div className="bg-gradient-to-r from-primary-900/50 to-primary-800/30 backdrop-blur-sm border border-white/10 rounded-3xl p-8 lg:p-12 mb-20 flex flex-col lg:flex-row items-center justify-between gap-8">
+        <div className="bg-gradient-to-r from-primary-900/40 to-primary-800/20 backdrop-blur-sm border border-white/5 rounded-3xl p-8 lg:p-12 mb-20 flex flex-col lg:flex-row items-center justify-between gap-8">
           <div className="text-center lg:text-left">
             <h3 className="text-2xl lg:text-3xl font-serif text-white mb-2 tracking-tight">Bereit für Ihren Traumgarten?</h3>
             <p className="text-zinc-400 font-light">Kostenlose, unverbindliche Erstberatung vor Ort.</p>
@@ -24,10 +24,12 @@ const Footer = () => {
           
           {/* Brand */}
           <div className="lg:col-span-5 pr-4">
-            <a href="#" className="flex items-center gap-2.5 mb-6 group">
-              <div className="bg-primary-600 text-white p-2 rounded-lg rounded-tr-sm rounded-bl-sm">
-                <Leaf className="w-5 h-5" />
-              </div>
+            <a href="#" className="flex items-center gap-3.5 mb-6 group">
+              <img 
+                src="/logo.png" 
+                alt="Grünblick Logo" 
+                className="w-12 h-12 object-contain" 
+              />
               <span className="text-2xl font-serif font-bold tracking-tight text-white">
                 Grünblick <span className="text-primary-400 italic font-light">Gartenservice</span>
               </span>
@@ -36,11 +38,13 @@ const Footer = () => {
               Ihr professioneller Partner für Gartengestaltung und -pflege in Leichlingen und Umgebung.
             </p>
             <div className="flex gap-3">
-              <a href="#" className="w-11 h-11 rounded-full bg-white/5 border border-white/10 hover:bg-primary-600 hover:border-primary-600 flex items-center justify-center transition-all duration-300 text-zinc-400 hover:text-white">
+              <a 
+                href="https://www.instagram.com/gruenblick.gartenservice/" 
+                target="_blank" 
+                rel="noopener noreferrer" 
+                className="w-11 h-11 rounded-full bg-white/5 border border-white/10 hover:bg-primary-600 hover:border-primary-600 flex items-center justify-center transition-all duration-300 text-zinc-400 hover:text-white"
+              >
                 <Instagram className="w-5 h-5" />
-              </a>
-              <a href="#" className="w-11 h-11 rounded-full bg-white/5 border border-white/10 hover:bg-primary-600 hover:border-primary-600 flex items-center justify-center transition-all duration-300 text-zinc-400 hover:text-white">
-                <Facebook className="w-5 h-5" />
               </a>
             </div>
           </div>

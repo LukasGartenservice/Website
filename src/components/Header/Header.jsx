@@ -19,11 +19,13 @@ const Header = () => {
       <div className="container mx-auto px-5 md:px-12 max-w-6xl">
         <div className="flex justify-between items-center">
           {/* Logo */}
-          <a href="#" className="flex items-center gap-2 group">
-            <div className="bg-primary-600 text-white p-2 rounded-lg rounded-tr-sm rounded-bl-sm transition-shadow group-hover:shadow-lg group-hover:shadow-primary-600/20">
-              <Leaf className="w-4.5 h-4.5" />
-            </div>
-            <span className="text-xl font-serif font-bold tracking-tight text-zinc-900">
+          <a href="#" className="flex items-center gap-3 group">
+            <img 
+              src="/logo.png" 
+              alt="Grünblick Logo" 
+              className="w-12 h-12 md:w-14 md:h-14 object-contain transition-transform group-hover:scale-105" 
+            />
+            <span className="text-xl md:text-2xl font-serif font-bold tracking-tight text-zinc-900 group-hover:text-primary-700 transition-colors">
               Grünblick <span className="text-primary-600 italic font-light">Gartenservice</span>
             </span>
           </a>

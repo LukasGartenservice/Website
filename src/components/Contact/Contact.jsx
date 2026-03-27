@@ -8,7 +8,7 @@ const Contact = () => {
   };
 
   return (
-    <section className="py-24 lg:py-40 bg-zinc-950 text-white relative overflow-hidden" id="contact">
+    <section className="py-24 lg:py-40 bg-primary-950 text-white relative overflow-hidden" id="contact">
       <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-primary-600 rounded-full blur-[150px] opacity-20 pointer-events-none"></div>
       <div className="absolute bottom-0 left-0 w-[600px] h-[600px] bg-accent-600 rounded-full blur-[180px] opacity-10 pointer-events-none"></div>
 
