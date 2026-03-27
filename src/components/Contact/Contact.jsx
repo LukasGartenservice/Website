@@ -1,10 +1,51 @@
+import { useState } from 'react';
 import { motion } from 'framer-motion';
-import { Send } from 'lucide-react';
+import { Send, Loader2 } from 'lucide-react';
 
 const Contact = () => {
-  const handleSubmit = (e) => {
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [formData, setFormData] = useState({
+    fullName: '',
+    email: '',
+    phone: '',
+    category: '',
+    message: ''
+  });
+
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setFormData(prev => ({ ...prev, [name]: value }));
+  };
+
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    window.location.hash = '#vielen-dank';
+    setIsSubmitting(true);
+
+    try {
+      const response = await fetch('https://n8n.srv1155101.hstgr.cloud/webhook/kontakt', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          ...formData,
+          source: 'Gartenservice Kontaktformular',
+          website: 'gruenblick-gartenservice.de',
+          date: new Date().toLocaleString('de-DE'),
+        }),
+      });
+
+      if (response.ok) {
+        window.location.hash = '#vielen-dank';
+      } else {
+        alert('Etwas ist schief gelaufen. Bitte versuchen Sie es später erneut.');
+      }
+    } catch (error) {
+      console.error('Error submitting form:', error);
+      alert('Verbindung zum Server fehlgeschlagen.');
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
@@ -45,6 +86,9 @@ const Contact = () => {
               <div className="space-y-2">
                 <input 
                   type="text" 
+                  name="fullName"
+                  value={formData.fullName}
+                  onChange={handleChange}
                   className="w-full bg-transparent border-b border-white/20 pb-4 focus:border-primary-400 transition-colors outline-none text-white placeholder-white/40 text-lg md:text-xl font-light font-sans" 
                   placeholder="Vollständiger Name"
                   required 
@@ -55,6 +99,9 @@ const Contact = () => {
                 <div className="space-y-2">
                   <input 
                     type="email" 
+                    name="email"
+                    value={formData.email}
+                    onChange={handleChange}
                     className="w-full bg-transparent border-b border-white/20 pb-4 focus:border-primary-400 transition-colors outline-none text-white placeholder-white/40 text-lg md:text-xl font-light font-sans" 
                     placeholder="E-Mail Adresse"
                     required 
@@ -63,6 +110,9 @@ const Contact = () => {
                 <div className="space-y-2">
                   <input 
                     type="tel" 
+                    name="phone"
+                    value={formData.phone}
+                    onChange={handleChange}
                     className="w-full bg-transparent border-b border-white/20 pb-4 focus:border-primary-400 transition-colors outline-none text-white placeholder-white/40 text-lg md:text-xl font-light font-sans" 
                     placeholder="Telefon (Optional)"
                   />
@@ -71,16 +121,18 @@ const Contact = () => {
 
               <div className="space-y-2 relative">
                 <select 
+                  name="category"
+                  value={formData.category}
+                  onChange={handleChange}
                   className="w-full bg-transparent border-b border-white/20 pb-4 focus:border-primary-400 transition-colors outline-none text-white/40 focus:text-white text-lg md:text-xl font-light appearance-none cursor-pointer font-sans"
                   required
-                  defaultValue=""
                 >
                   <option value="" disabled className="bg-zinc-900 text-zinc-400">Kategorie wählen...</option>
-                  <option value="rasenpflege" className="bg-zinc-900 text-white">Rasenpflege & Mäharbeiten</option>
-                  <option value="heckenschnitt" className="bg-zinc-900 text-white">Hecken- & Strauchschnitt</option>
-                  <option value="baumpflege" className="bg-zinc-900 text-white">Baumpflege & Fällarbeiten</option>
-                  <option value="reinigung" className="bg-zinc-900 text-white">Flächen- & Terrassenreinigung</option>
-                  <option value="sonstiges" className="bg-zinc-900 text-white">Sonstiges</option>
+                  <option value="Rasenpflege & Mäharbeiten" className="bg-zinc-900 text-white">Rasenpflege & Mäharbeiten</option>
+                  <option value="Hecken- & Strauchschnitt" className="bg-zinc-900 text-white">Hecken- & Strauchschnitt</option>
+                  <option value="Baumpflege & Fällarbeiten" className="bg-zinc-900 text-white">Baumpflege & Fällarbeiten</option>
+                  <option value="Flächen- & Terrassenreinigung" className="bg-zinc-900 text-white">Flächen- & Terrassenreinigung</option>
+                  <option value="Sonstiges" className="bg-zinc-900 text-white">Sonstiges</option>
                 </select>
                 <div className="absolute inset-y-0 right-0 flex items-center mb-4 pointer-events-none">
                   <svg className="w-5 h-5 text-white/40" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7"></path></svg>
@@ -89,6 +141,9 @@ const Contact = () => {
 
               <div className="space-y-2">
                 <textarea 
+                  name="message"
+                  value={formData.message}
+                  onChange={handleChange}
                   rows="3" 
                   className="w-full bg-transparent border-b border-white/20 pb-4 focus:border-primary-400 transition-colors outline-none text-white placeholder-white/40 resize-none text-lg md:text-xl font-light font-sans" 
                   placeholder="Beschreiben Sie kurz Ihr Projekt..."
@@ -98,10 +153,20 @@ const Contact = () => {
 
               <button 
                 type="submit" 
-                className="w-full bg-primary-500 hover:bg-primary-400 text-zinc-950 font-bold py-5 px-10 rounded-full transition-all duration-300 hover:-translate-y-1 flex items-center justify-center gap-3 text-lg md:text-xl shadow-[0_0_40px_rgba(40,70,50,0.5)] group mt-4 tracking-wide"
+                disabled={isSubmitting}
+                className="w-full bg-primary-500 hover:bg-primary-400 disabled:opacity-50 disabled:cursor-not-allowed text-zinc-950 font-bold py-5 px-10 rounded-full transition-all duration-300 hover:-translate-y-1 flex items-center justify-center gap-3 text-lg md:text-xl shadow-[0_0_40px_rgba(40,70,50,0.5)] group mt-4 tracking-wide"
               >
-                Anfrage senden
-                <Send className="w-6 h-6 group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform duration-300" />
+                {isSubmitting ? (
+                  <>
+                    <Loader2 className="w-6 h-6 animate-spin" />
+                    Wird gesendet...
+                  </>
+                ) : (
+                  <>
+                    Anfrage senden
+                    <Send className="w-6 h-6 group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform duration-300" />
+                  </>
+                )}
               </button>
             </form>
           </motion.div>
