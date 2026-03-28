@@ -36,7 +36,7 @@ const Hero = () => {
           >
             <div className="inline-flex items-center gap-2 bg-white/80 backdrop-blur-sm border border-primary-100 text-primary-800 px-4 py-1.5 rounded-full text-xs font-bold mb-8 shadow-sm">
               <Flower2 className="w-3.5 h-3.5 text-accent-500" />
-              <span>Gartenservice in Leichlingen</span>
+              <span>Ihr professioneller Gartenservice</span>
             </div>
             
             <h1 className="text-4xl md:text-5xl lg:text-6xl xl:text-[4.25rem] font-serif text-zinc-900 leading-[1.1] mb-6 tracking-tight">

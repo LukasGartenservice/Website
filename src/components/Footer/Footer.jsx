@@ -35,7 +35,7 @@ const Footer = () => {
               </span>
             </a>
             <p className="text-zinc-500 mb-8 leading-relaxed max-w-sm font-light">
-              Ihr professioneller Partner für Gartengestaltung und -pflege in Leichlingen und Umgebung.
+              Ihr professioneller Partner für moderne Gartengestaltung und leidenschaftliche Pflege in Ihrer Region.
             </p>
             <div className="flex gap-3">
               <a 
@@ -60,13 +60,9 @@ const Footer = () => {
             </ul>
           </div>
 
-          {/* Contact Info - nur Standort */}
-          <div className="lg:col-span-4">
-            <h4 className="text-white font-bold text-sm uppercase tracking-[0.2em] mb-6">Standort</h4>
-            <div className="flex items-start gap-3">
-              <MapPin className="w-5 h-5 text-primary-500 shrink-0 mt-0.5" />
-              <span className="text-zinc-500 leading-relaxed">An der Obstwiese 9<br />42799 Leichlingen</span>
-            </div>
+          {/* Quick Links Column Offset */}
+          <div className="lg:col-span-4 lg:col-start-9">
+            {/* Keeping it empty to maintain grid structure or just removing the column */}
           </div>
 
         </div>
