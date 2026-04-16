@@ -31,6 +31,7 @@ const Impressum = () => {
             <section>
               <h2 className="text-white text-xl font-bold uppercase tracking-widest mb-4 opacity-50">Kontakt</h2>
               <p>
+                Telefon: <a href="tel:+4915754086061" className="text-primary-400 hover:text-primary-300 transition-colors">01575 4086061</a><br />
                 E-Mail: <a href="mailto:lukasgartenservice@gmail.com" className="text-primary-400 hover:text-primary-300 transition-colors">lukasgartenservice@gmail.com</a>
               </p>
             </section>
